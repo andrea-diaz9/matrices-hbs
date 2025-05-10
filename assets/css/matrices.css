@@ -1,0 +1,45 @@
+#Matriz1{
+    width: 50%;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+#Matriz2{
+    width: 50%;
+    height: auto;
+    float: right;
+    text-align: center;
+}
+.celda{
+    width: 50px;
+    height: 30px;
+    font-size: xx-small;
+}
+#imprimir-orden1{
+    width: 50%;
+    text-align: center;
+}
+#imprimir-orden2{
+    width: 50%;
+    text-align: center;
+}
+#resultado{
+    font-family: cursive;
+    text-align: center;
+}
+#disTabla{
+    padding: 0px;
+    border-left: 3px solid rgb(193, 210, 255);
+    border-right: 3px solid rgb(193, 210, 255);
+}
+
+.td{
+    height: 30px;
+    width: 30px;
+    font-family: cursive;
+    border: 1px solid rgb(193, 210, 255);
+    text-align: center;
+}
+.parrafo{
+    font-family: cursive;
+}
