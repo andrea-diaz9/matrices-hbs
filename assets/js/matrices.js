@@ -96,10 +96,10 @@ function inputsMatriz1(valorFila, valorColumna){
             //se crea el input
             const inputCelda = document.createElement('input')
             /*atributos del input */
-            inputCelda.oninput = limitChar(event, 1, 3)
-            inputCelda.type = 'text'
-            inputCelda.className= 'celda'
-            inputCelda.id=`m1c${contadorFil}${contadorCol}`
+            inputCelda.setAttribute('type', 'text');
+            inputCelda.setAttribute('class', 'celda');
+            inputCelda.setAttribute('id', `m1c${contadorFil}${contadorCol}`);
+            inputCelda.setAttribute('oninput', 'limitChar(event, 1, 3)');
             //se inserta en el contenedor la celda
             contenedor.appendChild(inputCelda)
         }
@@ -134,10 +134,14 @@ function inputsMatriz2(valorFila, valorColumna){
             //se crea el input
             const inputCelda = document.createElement('input')
             /*atributos del input */
-            inputCelda.oninput =  limitChar(event, 1, 3)
-            inputCelda.type = 'text'
+           /*  inputCelda.type = 'text'
             inputCelda.className='celda' 
-            inputCelda.id=`m2c${contadorFil}${contadorCol}`
+            inputCelda.id=`m2c${contadorFil}${contadorCol}` */
+
+            inputCelda.setAttribute('type', 'text');
+            inputCelda.setAttribute('class', 'celda');
+            inputCelda.setAttribute('id', `m2c${contadorFil}${contadorCol}`);
+            inputCelda.setAttribute('oninput', 'limitChar(event, 1, 3)');
             //se inserta en el contenedor la celda
             contenedor.appendChild(inputCelda)
         }
@@ -535,4 +539,3 @@ function resultadoInvalido(){
     lineaDiv.append(resultado)
     secTabla.appendChild(lineaDiv)
 }
-

@@ -38,5 +38,3 @@ function limitChar(event, tipo, max) {
         event.target.value = event.target.value.replace(/\s/g, "");
     }
 }
-
-module.exports= limitChar
