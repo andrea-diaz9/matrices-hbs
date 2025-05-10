@@ -81,6 +81,20 @@ function declararOrden1(){
 
 }
 
+function declararOrden2(){
+    let filasLength2 = document.getElementById('numFilas2')
+    let columnasLength2 = document.getElementById('numColumnas2')
+    //validar que las filas sean minimo 1
+    if(filasLength2.value == "" || filasLength2.value <= 0){
+        filasLength2.value = 1
+    }
+    //validar que las columnas sean minimo 1
+    if(columnasLength2.value == "" || columnasLength2.value <= 0){
+        columnasLength2.value = 1
+    }
+    inputsMatriz2(filasLength2.value, columnasLength2.value)
+}
+
 function inputsMatriz1(valorFila, valorColumna){ 
     //se inicializan los contadores para poder ubicar los id
     let contadorFil =0 
@@ -108,20 +122,6 @@ function inputsMatriz1(valorFila, valorColumna){
     }
 }
 
-function declararOrden2(){
-    let filasLength2 = document.getElementById('numFilas2')
-    let columnasLength2 = document.getElementById('numColumnas2')
-    //validar que las filas sean minimo 1
-    if(filasLength2.value == "" || filasLength2.value <= 0){
-        filasLength2.value = 1
-    }
-    //validar que las columnas sean minimo 1
-    if(columnasLength2.value == "" || columnasLength2.value <= 0){
-        columnasLength2.value = 1
-    }
-    inputsMatriz2(filasLength2.value, columnasLength2.value)
-}
-
 function inputsMatriz2(valorFila, valorColumna){
     let contadorFil =0 
     let contadorCol =0
@@ -134,10 +134,6 @@ function inputsMatriz2(valorFila, valorColumna){
             //se crea el input
             const inputCelda = document.createElement('input')
             /*atributos del input */
-           /*  inputCelda.type = 'text'
-            inputCelda.className='celda' 
-            inputCelda.id=`m2c${contadorFil}${contadorCol}` */
-
             inputCelda.setAttribute('type', 'text');
             inputCelda.setAttribute('class', 'celda');
             inputCelda.setAttribute('id', `m2c${contadorFil}${contadorCol}`);
@@ -194,11 +190,10 @@ function guardarMatriz (){
             }
         }
     }
-    
-    let mAJSON = JSON.stringify(matrizA) 
-    let mBJSON =  JSON.stringify(matrizB)
-    console.log('MatrizA:',mAJSON, 'Matriz B:',mBJSON)
-
+    let matrizAjson= JSON.stringify(`${fila1.value}x${columna1.value}=[${matrizA}]`)
+    let matrizbjson= JSON.stringify(`${fila2.value}x${columna2.value}=[${matrizB}]`)
+    console.log(matrizAjson)
+    console.log(matrizbjson)
 
     matrizC=[]
 }
@@ -218,8 +213,9 @@ function operacionSumar () {
     matrizC = []
 
     //declaramos el parametro para titulo de la operacion en la tabla resultado
-    let operacion = 'Suma A+B'
-
+    let operacion ='Suma A+B'
+    let operacionJSON = JSON.stringify(operacion)
+    console.log(operacionJSON)
     //se crea la variable donde se va a insertar el elemento html
     let resultadoImpresion = document.getElementById('resultado')
     let resultadoJSON 
@@ -270,6 +266,8 @@ function operacionRestarAB () {
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta A-B'
+    let operacionJSON = JSON.stringify(operacion)
+    console.log(operacionJSON)
 
     //declaramos variable para guardar resultado JSON
     let resultadoJSON 
@@ -318,6 +316,8 @@ function operacionRestarBA () {
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta B-A'
+    let operacionJSON = JSON.stringify(operacion)
+    console.log(operacionJSON)
 
     //declaramos variable para guardar resultado JSON
     let resultadoJSON 
@@ -425,6 +425,9 @@ function operacionMultiplicacion(){
     let resultadoJSON 
 
     const operacion = 'Multiplicacion AxB'
+    let operacionJSON = JSON.stringify(operacion)
+    console.log(operacionJSON)
+    
     if(valorCantColA == valorCantFilasB){
 
         let resultado = 0 
