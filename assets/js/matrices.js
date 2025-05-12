@@ -55,20 +55,6 @@ function clickGuardar(){
     const ordenMatriz1 = declararOrden1();
     const ordenMatriz2 = declararOrden2();
 
-   /*  fetch(`http://localhost:${port}`, {
-        method: 'POST',
-        headers:{'Content-Type': 'application/json'}, 
-        body: JSON.stringify({
-            matrizA : ordenMatriz1,
-            matrizB : ordenMatriz2
-        }),
-    }).then (res => {
-        if(res.ok) {
-            return response.json
-        }else{
-            throw new Error('Error al guardar los datos')
-        }
-    }) */
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
 }
