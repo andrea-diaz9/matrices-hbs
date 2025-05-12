@@ -55,6 +55,7 @@ function clickGuardar(){
     const ordenMatriz1 = declararOrden1();
     const ordenMatriz2 = declararOrden2();
 
+   /* datos() */
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
 }
@@ -525,3 +526,27 @@ function resultadoInvalido(){
     lineaDiv.append(resultado)
     secTabla.appendChild(lineaDiv)
 }
+
+/* function  datos() {
+    const data = {
+       tipoOP: operacionJSON, 
+       matrizA: matrizAjson,
+       matrizB: matrizBjson,
+       resultado: resultadoJSON 
+    };
+
+    fetch('/guardar-operacion', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then((response) => response.json())
+        .then((result) => {
+            console.log('Operación guardada con éxito:', result);
+        })
+        .catch((err) => {
+            console.error('Error al guardar la operación:', err);
+        });
+} */
