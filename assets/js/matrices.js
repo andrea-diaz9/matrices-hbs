@@ -5,7 +5,14 @@ let matrizB = []
 let matrizC = []
 let matrizCFunction = []
 
+
 window.addEventListener('load', iniciar)
+
+// DATOS PARA SQL 
+let matrizAjson
+let matrizBjson
+let operacionJSON
+let resultadoJSON 
 
 function iniciar(){
     let btnGuardar  = document.getElementById('btnGuardar')
@@ -191,9 +198,9 @@ function guardarMatriz (){
         }
     }
     let matrizAjson= JSON.stringify(`${fila1.value}x${columna1.value}=[${matrizA}]`)
-    let matrizbjson= JSON.stringify(`${fila2.value}x${columna2.value}=[${matrizB}]`)
-    console.log(matrizAjson)
-    console.log(matrizbjson)
+    let matrizBjson= JSON.stringify(`${fila2.value}x${columna2.value}=[${matrizB}]`)
+    console.log('Matriz A: ',matrizAjson)
+    console.log('Matriz B: ',matrizBjson)
 
     matrizC=[]
 }
@@ -214,11 +221,10 @@ function operacionSumar () {
 
     //declaramos el parametro para titulo de la operacion en la tabla resultado
     let operacion ='Suma A+B'
-    let operacionJSON = JSON.stringify(operacion)
+    operacionJSON = JSON.stringify(operacion)
     console.log(operacionJSON)
     //se crea la variable donde se va a insertar el elemento html
-    let resultadoImpresion = document.getElementById('resultado')
-    let resultadoJSON 
+    let resultadoImpresion = document.getElementById('resultado') 
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
 
@@ -266,11 +272,8 @@ function operacionRestarAB () {
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta A-B'
-    let operacionJSON = JSON.stringify(operacion)
-    console.log(operacionJSON)
-
-    //declaramos variable para guardar resultado JSON
-    let resultadoJSON 
+    operacionJSON = JSON.stringify(operacion)
+    console.log(operacionJSON) 
 
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
@@ -316,11 +319,8 @@ function operacionRestarBA () {
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta B-A'
-    let operacionJSON = JSON.stringify(operacion)
+    operacionJSON = JSON.stringify(operacion)
     console.log(operacionJSON)
-
-    //declaramos variable para guardar resultado JSON
-    let resultadoJSON 
 
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
@@ -421,11 +421,8 @@ function operacionMultiplicacion(){
     let matrizAcopia = matrizA
     let matrizBcopia = matrizB
 
-    //declaramos variable para guardar resultado JSON
-    let resultadoJSON 
-
-    const operacion = 'Multiplicacion AxB'
-    let operacionJSON = JSON.stringify(operacion)
+    let operacion = 'Multiplicacion AxB'
+    operacionJSON = JSON.stringify(operacion)
     console.log(operacionJSON)
     
     if(valorCantColA == valorCantFilasB){
