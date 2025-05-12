@@ -15,13 +15,9 @@ const sql = require("mssql");
    sql.connect(config)
        .then(pool => {
            console.log('Conexión a la base de datos exitosa');
-           // Aquí puedes realizar operaciones con la base de datos (consultas, inserciones, etc.)
+           sql.query('SELECT * FROM operaciones').then(result => console.log(result)).catch(err => console.log(err))
            return pool;
        })
        .catch(err => {
            console.error('Error de conexión a la base de datos:', err);
        });
-
-/* module.exports= {
-  db_conn
-} */
