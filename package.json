@@ -1,8 +1,20 @@
-{
-  "dependencies": {
+
+{ 
+  "name": "matrices-hbs", 
+  "version": "1.0.0", 
+  "description": "", 
+  "main": "server.js", 
+  "scripts": { 
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "nodemon server.js -e js,hbs,css,html" 
+  }, 
+  "keywords": [], 
+  "author": "", 
+  "license": "ISC", 
+  "dependencies": { 
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "hbs": "^4.2.0",
-    "mssql": "^11.0.1"
-  }
-}
+        "express": "^5.1.0",
+        "hbs": "^4.2.0",
+        "mssql": "^11.0.1"
+  } 
+} 

@@ -12,12 +12,27 @@ const sql = require("mssql");
     }
   };
 
-   sql.connect(config)
-       .then(pool => {
-           console.log('Conexión a la base de datos exitosa');
-           sql.query('SELECT * FROM operaciones').then(result => console.log(result)).catch(err => console.log(err))
-           return pool;
-       })
-       .catch(err => {
-           console.error('Error de conexión a la base de datos:', err);
-       });
+  let pool
+
+  async function conexion_db (){
+    try {
+      if(!pool) {
+        pool = await sql.connect(config)
+        .then(async pool => {
+            console.log('Conexión a la base de datos exitosa')
+            /* const mostrarLista = await pool.request().query('select idOp, fechaOp, tipoOp, matrizA, matrizB, resultado from operaciones')
+            console.table(mostrarLista.recordset) */
+            /* console.table(mostrarLista.recordset) */ //es para que se vea en tabla en la consola
+          })
+        }
+        return pool;
+        
+      } catch (error) {
+        console.log('Error de conexion a la base de datos',error)
+        throw error
+      }
+    }
+    
+module.exports={
+  conexion_db,
+}

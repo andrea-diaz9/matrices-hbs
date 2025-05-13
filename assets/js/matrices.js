@@ -29,6 +29,9 @@ function iniciar(){
 
     let btnMultiplicar = document.getElementById('btnMultiplicarAB')
     btnMultiplicar.addEventListener('click', operacionMultiplicacion)
+    
+    let btnGuardarBD = document.getElementById('btnGuardarBD')
+    btnGuardarBD.addEventListener('click', resultadosBD)
 }
 
 function elegirOtroOrden(){
@@ -184,8 +187,8 @@ function guardarMatriz (){
             }
         }
     }
-    let matrizAjson= JSON.stringify(`${fila1.value}x${columna1.value}=[${matrizA}]`)
-    let matrizBjson= JSON.stringify(`${fila2.value}x${columna2.value}=[${matrizB}]`)
+    matrizAjson= JSON.stringify(`${fila1.value}x${columna1.value}=[${matrizA}]`)
+    matrizBjson= JSON.stringify(`${fila2.value}x${columna2.value}=[${matrizB}]`)
     console.log('Matriz A: ',matrizAjson)
     console.log('Matriz B: ',matrizBjson)
 
@@ -542,26 +545,25 @@ function resultadoInvalido(){
     secTabla.appendChild(lineaGris)
 }
 
-/* function  datos() {
-    const data = {
-       tipoOP: operacionJSON, 
-       matrizA: matrizAjson,
-       matrizB: matrizBjson,
-       resultado: resultadoJSON 
-    };
-
-    fetch('/guardar-operacion', {
+function  resultadosBD(){
+    const datos = {
+        operacionJSON,
+        matrizAjson,
+        matrizBjson,
+        resultadoJSON
+    }
+    console.log(datos)
+    
+    fetch('/opera',{
         method: 'POST',
-        body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json',
         },
+        body: JSON.stringify(datos)
     })
-        .then((response) => response.json())
-        .then((result) => {
-            console.log('Operación guardada con éxito:', result);
-        })
-        .catch((err) => {
-            console.error('Error al guardar la operación:', err);
-        });
-} */
+    .then((response) => response.json())
+    .then((result) => {
+        console.log(result)
+    })
+    .catch(err => console.log('error al imprimir', err))
+}
