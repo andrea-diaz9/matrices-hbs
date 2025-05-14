@@ -552,7 +552,6 @@ function  resultadosBD(){
         operacionJSON,
         resultadoJSON
     }
-    console.log(datos)
     
     fetch('/opera',{
         method: 'POST',
