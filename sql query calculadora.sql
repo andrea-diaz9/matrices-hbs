@@ -8,3 +8,5 @@ matrizA nvarchar(max) NOT NULL,
 matrizB nvarchar(max) NOT NULL,
 resultado nvarchar(max) NOT NULL
 )
+
+select * from operaciones
