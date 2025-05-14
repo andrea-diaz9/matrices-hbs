@@ -187,8 +187,8 @@ function guardarMatriz (){
             }
         }
     }
-    matrizAjson= JSON.stringify(`${fila1.value}x${columna1.value}=[${matrizA}]`)
-    matrizBjson= JSON.stringify(`${fila2.value}x${columna2.value}=[${matrizB}]`)
+    matrizAjson= `${fila1.value} x ${columna1.value} = [${matrizA}]`
+    matrizBjson= `${fila2.value} x ${columna2.value} = [${matrizB}]`
     console.log('Matriz A: ',matrizAjson)
     console.log('Matriz B: ',matrizBjson)
 
@@ -211,7 +211,7 @@ function operacionSumar () {
 
     //declaramos el parametro para titulo de la operacion en la tabla resultado
     let operacion ='Suma A+B'
-    operacionJSON = JSON.stringify(operacion)
+    operacionJSON = operacion
     console.log(operacionJSON)
     //se crea la variable donde se va a insertar el elemento html
     let resultadoImpresion = document.getElementById('resultado') 
@@ -235,10 +235,10 @@ function operacionSumar () {
 
         crearTablaResultado(operacion)
     } else{
-        resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
+        let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
 
         //convierte el resultado a json
-        resultadoJSON = JSON.stringify(resultado)
+        resultadoJSON = resultado
         console.log('Resultado en JSON:', resultadoJSON)
         
         //imprime el resultado en la pantalla
@@ -262,7 +262,7 @@ function operacionRestarAB () {
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta A-B'
-    operacionJSON = JSON.stringify(operacion)
+    operacionJSON = operacion
     console.log(operacionJSON) 
 
     //valida que las filas y columnas sean del mismo tamaño
@@ -283,10 +283,10 @@ function operacionRestarAB () {
         resultadoJSON= JSON.stringify(matrizC)
         console.log('resultado en JSON:',resultadoJSON)
     } else{
-        resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
+        let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
         //convierte el resultado a json
-        resultadoJSON = JSON.stringify(resultado)
+        resultadoJSON = resultado
         console.log('Resultado en JSON:', resultadoJSON)
 
         resultadoInvalido(resultado)
@@ -309,7 +309,7 @@ function operacionRestarBA () {
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta B-A'
-    operacionJSON = JSON.stringify(operacion)
+    operacionJSON = operacion
     console.log(operacionJSON)
 
     //valida que las filas y columnas sean del mismo tamaño
@@ -332,10 +332,10 @@ function operacionRestarBA () {
 
         crearTablaResultado(operacion)
     } else{
-        resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
+        let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
          
         //convierte el resultado a json
-        resultadoJSON = JSON.stringify(resultado)
+        resultadoJSON = resultado
         console.log('Resultado en JSON:', resultadoJSON)
 
         resultadoInvalido(resultado)
@@ -418,12 +418,12 @@ function operacionMultiplicacion(){
     const valorCantColB = cantCol2.value
     let matrizAcopia = matrizA
     let matrizBcopia = matrizB
-
+    
     let operacion = 'Multiplicacion AxB'
-    operacionJSON = JSON.stringify(operacion)
+    operacionJSON = operacion
     console.log(operacionJSON)
     
-    if(valorCantColA == valorCantFilasB){
+    if(valorCantColA === valorCantFilasB){
 
         let resultado = 0 
         
@@ -463,8 +463,8 @@ function operacionMultiplicacion(){
         console.log('resultado en JSON:',resultadoJSON)
         /*termina if*/
     }else{
-        resultado='La cantidad de columnas de la matriz A no es igual a la cantidad de filas de la matriz B'        
-        resultadoJSON = JSON.stringify(resultado)
+        let resultado='La cantidad de cantidad de la matriz A no es igual a la filas de columnas de la matriz B'        
+        resultadoJSON = resultado
         console.log('Resultado en JSON:', resultadoJSON)
 
         resultadoInvalido(resultado)
@@ -524,9 +524,9 @@ function crearTablaResultadoMultiplicacion(operacion){
     secTabla.appendChild(divEspacio)
 }
 
-function resultadoInvalido(){
+function resultadoInvalido(resultado){
     let secTabla = document.getElementById('secTabla')
-
+    
     const lineaDiv = document.createElement('div')
     lineaDiv.className = 'col-12'
     lineaDiv.style.textAlign= 'center'
@@ -547,9 +547,9 @@ function resultadoInvalido(){
 
 function  resultadosBD(){
     const datos = {
-        operacionJSON,
         matrizAjson,
         matrizBjson,
+        operacionJSON,
         resultadoJSON
     }
     console.log(datos)
@@ -562,8 +562,8 @@ function  resultadosBD(){
         body: JSON.stringify(datos)
     })
     .then((response) => response.json())
-    .then((result) => {
-        console.log(result)
+    .then((result) => {/* 
+        console.log(result) */
     })
     .catch(err => console.log('error al imprimir', err))
 }
