@@ -67,6 +67,7 @@ function clickGuardar(){
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
 }
+
 function showbtnGuardarBD(){
     let btnGuardarBD = document.getElementById('btnGuardarBD')
     btnGuardarBD.style.display='block'
@@ -368,7 +369,6 @@ function crearTablaResultado(operacion){
     const lineaGris = document.createElement('div')
     lineaGris.className='col-12'
     lineaGris.className='separadorBlanco'
-    lineaGris.style.backgroundColor='white'
     lineaGris.style.height='1px'
 
     const table = document.createElement('table')
@@ -497,16 +497,21 @@ function crearTablaResultadoMultiplicacion(operacion){
     table.id='disTabla'
     table.className= 'col-4'
 
+    const lineaGris = document.createElement('div')
+    lineaGris.className='col-12'
+    lineaGris.className='separadorBlanco'
+    lineaGris.style.height='1px'
+    
     secTabla.appendChild(lineaDiv)
     
     //aqui se pide el parametro para saber que operacion se esta ejecutando
     lineaDiv.innerHTML= operacion
-
+    
     secTabla.appendChild(espacio2) //se crea el espacio para que se centre la tabla
-
+    
     //para saber en que elemento del array matrizC va
     let contador = 0
-
+    
     
     for(let i= 1 ; i<=cantFilTotal.value; i++){
         //se crea y se inserta una fila en la tabla de resultados
@@ -525,6 +530,7 @@ function crearTablaResultadoMultiplicacion(operacion){
     secTabla.appendChild(table)
     
     secTabla.appendChild(divEspacio)
+    secTabla.appendChild(lineaGris)
 }
 
 function resultadoInvalido(resultado){
@@ -543,7 +549,6 @@ function resultadoInvalido(resultado){
     const lineaGris = document.createElement('div')
     lineaGris.className='col-12'
     lineaGris.className='separadorBlanco'
-    lineaGris.style.backgroundColor='white'
     lineaGris.style.height='10px'
     secTabla.appendChild(lineaGris)
 }

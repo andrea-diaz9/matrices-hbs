@@ -1,10 +1,12 @@
 #Matriz1{
+    padding: 0px;
     width: 50%;
     height: auto;
     float: left;
     text-align: center;
 }
 #Matriz2{
+    padding: 0px;
     width: 50%;
     height: auto;
     float: right;
@@ -42,4 +44,41 @@
 }
 .parrafo{
     font-family: cursive;
+}
+
+#pMatriz1{
+    background-color: black; 
+    padding-top: 20px ;
+    padding-bottom: 20px; 
+    width : 100%;
+    color:whitesmoke
+}
+
+#pMatriz2{
+    background-color: black; 
+    padding-top: 20px ;
+    padding-bottom: 20px; 
+    width : 100%;
+    color:whitesmoke
+}
+ #btnSumar{
+    margin-left:10%;
+    width: 80%;
+    border-radius: 20px;
+    border-color:blueviolet;
+    background-color:white;
+}
+#btnGuardar, #btnElegirOtroOrden, #btnRestarAB, #btnRestarBA, #btnGuardarBD{
+    width: 100%;
+    border-radius: 20px;
+    border-color:blueviolet;
+    background-color:white;
+}
+
+#btnMultiplicarAB{
+    margin-right:10%;
+    width: 80%;
+    border-radius: 20px;
+    border-color:blueviolet;
+    background-color:white;
 }

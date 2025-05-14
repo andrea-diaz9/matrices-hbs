@@ -11,10 +11,9 @@
     <!--orden de matrices-->
     
     <section id="delcararOrden" class="row">
-        <section style="height: 50px;"></section>
         <!--Elementos primer matriz-->
         <section id="Matriz1"> 
-            <p>Declarar orden de la matriz A: </p>
+            <p id="pMatriz1">Declarar orden de la matriz A: </p>
             <section>
                 <label for="numFilas1">Fila(s)➡: </label><br>
                 <input type="text" oninput="limitChar(event, 1, 1)" id="numFilas1"><br>
@@ -25,7 +24,7 @@
         <br><br>
         <!--Elementos segunda matriz-->
         <section id="Matriz2"> 
-            <p>Declarar orden de la matriz B: </p>
+            <p id="pMatriz2">Declarar orden de la matriz B: </p>
             <section>
                 <label for="numFilas2">Fila(s)➡:</label><br>
                 <input type="text" oninput="limitChar(event, 1, 1)" id="numFilas2"><br>
@@ -40,8 +39,8 @@
     <section class="row"> <!--botones para definir el orden de la matriz-->
         <div class="col-5" style="padding: 0px; margin: 0px;"></div>
         <div class="col-2" id="botones" style="padding: 0px; margin: 0px;">
-            <button id="btnGuardar" style="margin-left:10%; width: 80%;">Guardar</button>
-            <button id="btnElegirOtroOrden" style="display: none; text-align: center; margin-left:10%; width: 80%;">Elegir otro tamaño</button>
+            <button id="btnGuardar">Guardar</button>
+            <button id="btnElegirOtroOrden" style="display: none;">Elegir otro tamaño</button>
         </div>
         <div class="col-5" style="padding: 0px; margin: 0px;"></div>
     </section>
@@ -57,18 +56,28 @@
 
     <section id="sctBotones" style="display: none;"> <!--espacio para botones de operacion-->
             <div class="row">
-                <button id="btnSumar" class="col-2">Sumar</button>
+                <div class="col-2">
+                <button id="btnSumar">Sumar</button>
+                </div>
                 <div class="col-1"></div>
-                <button id="btnRestarAB" class="col-2">Restar (A-B)</button>
+                <div class="col-2">
+                <button id="btnRestarAB">Restar (A-B)</button>
+                </div>
                 <div class="col-2"></div>
-                <button id="btnRestarBA" class="col-2">Restar (B-A)</button>
+                <div class="col-2">
+                <button id="btnRestarBA">Restar (B-A)</button>
+                </div>
                 <div class="col-1"></div>
-                <button id="btnMultiplicarAB" class="col-2">Multiplicar AxB</button>
+                <div class="col-2">
+                <button id="btnMultiplicarAB">Multiplicar AxB</button>
+                </div>
             </div>
             <div class="row" style="height: 5px;"></div>
             <div class="row">
                 <div class="col-5"></div>
-                <button id="btnGuardarBD" style="display: none" class="col-2">Guardar a BD</button>
+                <div class="col-2">
+                    <button id="btnGuardarBD" style="display: none; width: 100%">Guardar a BD</button>
+                </div>
             </div>
     </section>
 
