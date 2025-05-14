@@ -13,6 +13,7 @@ let matrizAjson
 let matrizBjson
 let operacionJSON
 let resultadoJSON 
+let ordenRes
 
 function iniciar(){
     let btnGuardar  = document.getElementById('btnGuardar')
@@ -187,8 +188,10 @@ function guardarMatriz (){
             }
         }
     }
-    matrizAjson= `${fila1.value} x ${columna1.value} = [${matrizA}]`
-    matrizBjson= `${fila2.value} x ${columna2.value} = [${matrizB}]`
+    ordenAjson = `${fila1.value} x ${columna1.value}`
+    matrizAjson= JSON.stringify(matrizA)
+    ordenBjson = `${fila2.value} x ${columna2.value}`
+    matrizBjson= JSON.stringify(matrizB)
     console.log('Matriz A: ',matrizAjson)
     console.log('Matriz B: ',matrizBjson)
 
@@ -245,6 +248,7 @@ function operacionSumar () {
         resultadoInvalido(resultado)
     }
     
+    ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function operacionRestarAB () {
@@ -291,6 +295,7 @@ function operacionRestarAB () {
 
         resultadoInvalido(resultado)
     }
+    ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function operacionRestarBA () {
@@ -340,6 +345,7 @@ function operacionRestarBA () {
 
         resultadoInvalido(resultado)
     }
+    ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function crearTablaResultado(operacion){
@@ -469,7 +475,7 @@ function operacionMultiplicacion(){
 
         resultadoInvalido(resultado)
     }
-    
+    ordenRes = `${valorCantFilasA} x ${valorCantColB}`
 }
 
 function crearTablaResultadoMultiplicacion(operacion){
@@ -547,12 +553,15 @@ function resultadoInvalido(resultado){
 
 function  resultadosBD(){
     const datos = {
+        ordenAjson,
         matrizAjson,
+        ordenBjson,
         matrizBjson,
+        ordenRes,
         operacionJSON,
         resultadoJSON
     }
-    
+
     fetch('/opera',{
         method: 'POST',
         headers: {
@@ -561,8 +570,8 @@ function  resultadosBD(){
         body: JSON.stringify(datos)
     })
     .then((response) => response.json())
-    .then((result) => {/* 
-        console.log(result) */
+    .then((result) => {
+        console.log('Inserción completada')
     })
     .catch(err => console.log('error al imprimir', err))
 }
