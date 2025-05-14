@@ -21,15 +21,19 @@ function iniciar(){
 
     let sumar  =document.getElementById('btnSumar')
     sumar.addEventListener('click',operacionSumar)
+    sumar.addEventListener('click', showbtnGuardarBD)
 
     let restarAB =document.getElementById('btnRestarAB')
     restarAB.addEventListener('click', operacionRestarAB)
+    restarAB.addEventListener('click', showbtnGuardarBD)
 
     let restarBA =document.getElementById('btnRestarBA')
     restarBA.addEventListener('click', operacionRestarBA)
+    restarBA.addEventListener('click', showbtnGuardarBD)
 
     let btnMultiplicar = document.getElementById('btnMultiplicarAB')
     btnMultiplicar.addEventListener('click', operacionMultiplicacion)
+    btnMultiplicar.addEventListener('click', showbtnGuardarBD)
     
     let btnGuardarBD = document.getElementById('btnGuardarBD')
     btnGuardarBD.addEventListener('click', resultadosBD)
@@ -62,6 +66,10 @@ function clickGuardar(){
    /* datos() */
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
+}
+function showbtnGuardarBD(){
+    let btnGuardarBD = document.getElementById('btnGuardarBD')
+    btnGuardarBD.style.display='block'
 }
 
 function declararOrden1(){
@@ -192,8 +200,6 @@ function guardarMatriz (){
     matrizAjson= JSON.stringify(matrizA)
     ordenBjson = `${fila2.value} x ${columna2.value}`
     matrizBjson= JSON.stringify(matrizB)
-    console.log('Matriz A: ',matrizAjson)
-    console.log('Matriz B: ',matrizBjson)
 
     matrizC=[]
 }
@@ -215,7 +221,6 @@ function operacionSumar () {
     //declaramos el parametro para titulo de la operacion en la tabla resultado
     let operacion ='Suma A+B'
     operacionJSON = operacion
-    console.log(operacionJSON)
     //se crea la variable donde se va a insertar el elemento html
     let resultadoImpresion = document.getElementById('resultado') 
     //valida que las filas y columnas sean del mismo tamaño
@@ -234,7 +239,6 @@ function operacionSumar () {
         }
         //convierte el resultado a json
         resultadoJSON= JSON.stringify(matrizC)
-        console.log('resultado en JSON:',resultadoJSON)
 
         crearTablaResultado(operacion)
     } else{
@@ -242,7 +246,6 @@ function operacionSumar () {
 
         //convierte el resultado a json
         resultadoJSON = resultado
-        console.log('Resultado en JSON:', resultadoJSON)
         
         //imprime el resultado en la pantalla
         resultadoInvalido(resultado)
@@ -267,7 +270,6 @@ function operacionRestarAB () {
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta A-B'
     operacionJSON = operacion
-    console.log(operacionJSON) 
 
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
@@ -285,13 +287,13 @@ function operacionRestarAB () {
         crearTablaResultado(operacion)
 
         resultadoJSON= JSON.stringify(matrizC)
-        console.log('resultado en JSON:',resultadoJSON)
+        
     } else{
         let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
         //convierte el resultado a json
         resultadoJSON = resultado
-        console.log('Resultado en JSON:', resultadoJSON)
+        
 
         resultadoInvalido(resultado)
     }
@@ -315,7 +317,6 @@ function operacionRestarBA () {
     //declaramos el variable para titulo de la operacion en la tabla resultado
     let operacion = 'Resta B-A'
     operacionJSON = operacion
-    console.log(operacionJSON)
 
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
@@ -333,7 +334,6 @@ function operacionRestarBA () {
             
         }
         resultadoJSON= JSON.stringify(matrizC)
-        console.log('resultado en JSON:',resultadoJSON)
 
         crearTablaResultado(operacion)
     } else{
@@ -341,7 +341,6 @@ function operacionRestarBA () {
          
         //convierte el resultado a json
         resultadoJSON = resultado
-        console.log('Resultado en JSON:', resultadoJSON)
 
         resultadoInvalido(resultado)
     }
@@ -427,7 +426,6 @@ function operacionMultiplicacion(){
     
     let operacion = 'Multiplicacion AxB'
     operacionJSON = operacion
-    console.log(operacionJSON)
     
     if(valorCantColA === valorCantFilasB){
 
@@ -466,7 +464,6 @@ function operacionMultiplicacion(){
         crearTablaResultadoMultiplicacion(operacion)        
 
         resultadoJSON= JSON.stringify(matrizC)
-        console.log('resultado en JSON:',resultadoJSON)
         /*termina if*/
     }else{
         let resultado='La cantidad de cantidad de la matriz A no es igual a la filas de columnas de la matriz B'        
@@ -562,6 +559,7 @@ function  resultadosBD(){
         resultadoJSON
     }
 
+    console.log(datos)
     fetch('/opera',{
         method: 'POST',
         headers: {
