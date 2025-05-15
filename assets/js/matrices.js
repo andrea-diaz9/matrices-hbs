@@ -241,15 +241,15 @@ function operacionSumar () {
         //convierte el resultado a json
         resultadoJSON= JSON.stringify(matrizC)
 
-        crearTablaResultado(operacion)
+        /* crearTablaResultado(operacion) */
     } else{
         let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
 
         //convierte el resultado a json
         resultadoJSON = resultado
         
-        //imprime el resultado en la pantalla
-        resultadoInvalido(resultado)
+        /* //imprime el resultado en la pantalla
+        resultadoInvalido(resultado) */
     }
     
     ordenRes = `${fila1.value} x ${columna1.value}`
@@ -285,7 +285,7 @@ function operacionRestarAB () {
                 matrizC.push(parseFloat(elemento))
             }
         }
-        crearTablaResultado(operacion)
+/*         crearTablaResultado(operacion) */
 
         resultadoJSON= JSON.stringify(matrizC)
         
@@ -296,7 +296,7 @@ function operacionRestarAB () {
         resultadoJSON = resultado
         
 
-        resultadoInvalido(resultado)
+/*         resultadoInvalido(resultado) */
     }
     ordenRes = `${fila1.value} x ${columna1.value}`
 }
@@ -336,16 +336,17 @@ function operacionRestarBA () {
         }
         resultadoJSON= JSON.stringify(matrizC)
 
-        crearTablaResultado(operacion)
+        ordenRes = `${fila1.value} x ${columna1.value}`
+
+       /*  crearTablaResultado(operacion) */
     } else{
         let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
          
         //convierte el resultado a json
         resultadoJSON = resultado
 
-        resultadoInvalido(resultado)
+        /* resultadoInvalido(resultado) */
     }
-    ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function crearTablaResultado(operacion){
@@ -464,15 +465,17 @@ function operacionMultiplicacion(){
         crearTablaResultadoMultiplicacion(operacion)        
 
         resultadoJSON= JSON.stringify(matrizC)
+        
+        ordenRes = `${valorCantFilasA} x ${valorCantColB}`
+        
         /*termina if*/
     }else{
-        let resultado='La cantidad de cantidad de la matriz A no es igual a la filas de columnas de la matriz B'        
+        let resultado='La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'        
         resultadoJSON = resultado
         console.log('Resultado en JSON:', resultadoJSON)
 
         resultadoInvalido(resultado)
     }
-    ordenRes = `${valorCantFilasA} x ${valorCantColB}`
 }
 
 function crearTablaResultadoMultiplicacion(operacion){
@@ -552,6 +555,7 @@ function resultadoInvalido(resultado){
     lineaGris.style.height='10px'
     secTabla.appendChild(lineaGris)
 }
+
 
 function  resultadosBD(){
     const datos = {

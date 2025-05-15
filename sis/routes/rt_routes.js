@@ -19,7 +19,7 @@ router.post('/opera',   async (req, res) => {
         .query(`INSERT INTO operaciones ( ordenA, matrizA, ordenB, matrizB, tipoOp, ordenR, resultado)`+
         `VALUES ( @ordenA, @matrizA, @ordenB, @matrizB, @tipoOp, @ordenR, @resultado)`)
         res.json({resultado})
-        console.log('Inserción completada')
+        console.log('ok')
     } catch (error) {
         console.log('Error al guardar la operacion.', error)
     } 
