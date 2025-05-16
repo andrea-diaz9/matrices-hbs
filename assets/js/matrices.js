@@ -238,7 +238,8 @@ function operacionSumar () {
         crearTablaResultado(operacion)
 
         resultadoJSON= JSON.stringify(matrizC)
-        
+
+        ordenRes = `${fila1.value} x ${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
 
@@ -248,9 +249,18 @@ function operacionSumar () {
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
-
+        ordenRes =''
     }
-    ordenRes = `${fila1.value} x ${columna1.value}`
+    let datosConsola = {
+        ordenAjson,
+        matrizAjson,
+        ordenBjson,
+        matrizBjson,
+        operacionJSON,
+        ordenRes,
+        resultadoJSON
+    }
+    console.log(operacionJSON,':',datosConsola)
 }
 
 function operacionRestarAB () {
@@ -288,6 +298,7 @@ function operacionRestarAB () {
 
         resultadoJSON= JSON.stringify(matrizC)
         
+        ordenRes = `${fila1.value} x ${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
@@ -297,8 +308,18 @@ function operacionRestarAB () {
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
+        ordenRes =''
     }
-    ordenRes = `${fila1.value} x ${columna1.value}`
+    let datosConsola = {
+        ordenAjson,
+        matrizAjson,
+        ordenBjson,
+        matrizBjson,
+        operacionJSON,
+        ordenRes,
+        resultadoJSON
+    }
+    console.log(operacionJSON,':',datosConsola)
 }
 
 function operacionRestarBA () {
@@ -335,7 +356,8 @@ function operacionRestarBA () {
         crearTablaResultado(operacion) 
 
         resultadoJSON= JSON.stringify(matrizC)
-
+        
+        ordenRes = `${fila1.value} x ${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
@@ -345,8 +367,18 @@ function operacionRestarBA () {
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
+        ordenRes =''
     }
-    ordenRes = `${fila1.value} x ${columna1.value}`
+    let datosConsola = {
+        ordenAjson,
+        matrizAjson,
+        ordenBjson,
+        matrizBjson,
+        operacionJSON,
+        ordenRes,
+        resultadoJSON
+    }
+    console.log(operacionJSON,':',datosConsola)
 }
 
 function crearTablaResultado(operacion){
@@ -502,7 +534,18 @@ function operacionMultiplicacion(){
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
+        ordenRes =''
     }
+    let datosConsola = {
+        ordenAjson,
+        matrizAjson,
+        ordenBjson,
+        matrizBjson,
+        operacionJSON,
+        ordenRes,
+        resultadoJSON
+    }
+    console.log(operacionJSON,':',datosConsola)
 }
 
 function crearTablaResultadoMultiplicacion(operacion) {
@@ -627,7 +670,6 @@ function  resultadosBD(){
         resultadoJSON
     }
 
-    console.log(datos)
     fetch('/opera',{
         method: 'POST',
         headers: {
@@ -637,7 +679,7 @@ function  resultadosBD(){
     })
     .then((response) => response.json())
     .then((result) => {
-        console.log('Inserción completada')
+        console.log('Se guardó en BD')
     })
     .catch(err => console.log('error al imprimir', err))
 }
