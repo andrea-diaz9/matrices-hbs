@@ -16,26 +16,26 @@ let resultadoJSON
 let ordenRes
 
 function iniciar(){
-    let btnGuardar  = document.getElementById('btnGuardar')
+    const btnGuardar  = document.getElementById('btnGuardar')
     btnGuardar.addEventListener('click', clickGuardar)
 
-    let sumar  =document.getElementById('btnSumar')
+    const sumar  =document.getElementById('btnSumar')
     sumar.addEventListener('click',operacionSumar)
     sumar.addEventListener('click', showbtnGuardarBD)
 
-    let restarAB =document.getElementById('btnRestarAB')
+    const restarAB =document.getElementById('btnRestarAB')
     restarAB.addEventListener('click', operacionRestarAB)
     restarAB.addEventListener('click', showbtnGuardarBD)
 
-    let restarBA =document.getElementById('btnRestarBA')
+    const restarBA =document.getElementById('btnRestarBA')
     restarBA.addEventListener('click', operacionRestarBA)
     restarBA.addEventListener('click', showbtnGuardarBD)
 
-    let btnMultiplicar = document.getElementById('btnMultiplicarAB')
+    const btnMultiplicar = document.getElementById('btnMultiplicarAB')
     btnMultiplicar.addEventListener('click', operacionMultiplicacion)
     btnMultiplicar.addEventListener('click', showbtnGuardarBD)
     
-    let btnGuardarBD = document.getElementById('btnGuardarBD')
+    const btnGuardarBD = document.getElementById('btnGuardarBD')
     btnGuardarBD.addEventListener('click', resultadosBD)
 }
 
@@ -44,12 +44,11 @@ function elegirOtroOrden(){
 }
 
 function clickGuardar(){
-    let btnGuardar  = document.getElementById('btnGuardar')
-    let btnElegirOtroOrden = document.getElementById('btnElegirOtroOrden')
-    let sectionOrden = document.getElementById('delcararOrden')
-    let sctResultado = document.getElementById('resultado')
+    const btnGuardar  = document.getElementById('btnGuardar')
+    const btnElegirOtroOrden = document.getElementById('btnElegirOtroOrden')
+    const sectionOrden = document.getElementById('delcararOrden')
     
-    let sctBotones = document.getElementById('sctBotones')
+    const sctBotones = document.getElementById('sctBotones')
     //se deja de mostrar cuando clickeamos guardar
     sectionOrden.style.display='none'
     btnGuardar.style.display='none'
@@ -57,11 +56,10 @@ function clickGuardar(){
     //aparecen para poder hacer las operaciones
     btnElegirOtroOrden.style.display='block'
     sctBotones.style.display = 'block'
-    sctResultado.style.display = 'block'
 
 
-    const ordenMatriz1 = declararOrden1();
-    const ordenMatriz2 = declararOrden2();
+    declararOrden1();
+    declararOrden2();
 
    /* datos() */
 
@@ -69,13 +67,13 @@ function clickGuardar(){
 }
 
 function showbtnGuardarBD(){
-    let btnGuardarBD = document.getElementById('btnGuardarBD')
+    const btnGuardarBD = document.getElementById('btnGuardarBD')
     btnGuardarBD.style.display='block'
 }
 
 function declararOrden1(){
-    let filasLength1 = document.getElementById('numFilas1')
-    let columnasLength1 = document.getElementById('numColumnas1')
+    const filasLength1 = document.getElementById('numFilas1')
+    const columnasLength1 = document.getElementById('numColumnas1')
     //validar que las FILAS sean minimo 1
     if(filasLength1.value == "" || filasLength1.value <= 0){
         filasLength1.value = 1
@@ -89,8 +87,8 @@ function declararOrden1(){
 }
 
 function declararOrden2(){
-    let filasLength2 = document.getElementById('numFilas2')
-    let columnasLength2 = document.getElementById('numColumnas2')
+    const filasLength2 = document.getElementById('numFilas2')
+    const columnasLength2 = document.getElementById('numColumnas2')
     //validar que las filas sean minimo 1
     if(filasLength2.value == "" || filasLength2.value <= 0){
         filasLength2.value = 1
@@ -108,10 +106,10 @@ function inputsMatriz1(valorFila, valorColumna){
     let contadorCol =0
 
     //se declara donde se va a insertar las celdas
-    let contenedor = document.getElementById('imprimir-orden1')
+    const contenedor = document.getElementById('imprimir-orden1')
     for (let i = 0; i < valorFila; i++) {
         contadorFil ++
-        let espacio = document.createElement('br')
+        const espacio = document.createElement('br')
         for (let j = 0; j < valorColumna; j++) { 
             contadorCol++
             //se crea el input
@@ -133,7 +131,7 @@ function inputsMatriz2(valorFila, valorColumna){
     let contadorFil =0 
     let contadorCol =0
     //se crea la variable donde se va a insertar el elemento html
-    let contenedor = document.getElementById('imprimir-orden2')
+    const contenedor = document.getElementById('imprimir-orden2')
     for (let i = 0; i < valorFila; i++) {
         contadorFil ++
         for (let j = 0; j < valorColumna; j++) { 
@@ -148,7 +146,7 @@ function inputsMatriz2(valorFila, valorColumna){
             //se inserta en el contenedor la celda
             contenedor.appendChild(inputCelda)
         }
-        let espacio = document.createElement('br')
+        const espacio = document.createElement('br')
         contenedor.appendChild(espacio)
         contadorCol = 0
     }
@@ -160,8 +158,8 @@ function guardarMatriz (){
     matrizB = []
 
     //traemos el dato de la matriz 1 desde html
-    let fila1 = document.getElementById('numFilas1')
-    let columna1 = document.getElementById('numColumnas1')
+    const fila1 = document.getElementById('numFilas1')
+    const columna1 = document.getElementById('numColumnas1')
 
     //leemos cada celda en orden fila-columna, se repite hasta que el numero de filas coincida
     for (let i = 1; i <= fila1.value; i++) {
@@ -180,8 +178,8 @@ function guardarMatriz (){
 
     //REPEAT de los procedimientos de arriba pero para la matriz B
     //traemos el dato de la matriz 2 desde html
-    let fila2 = document.getElementById('numFilas2')
-    let columna2 = document.getElementById('numColumnas2')
+    const fila2 = document.getElementById('numFilas2')
+    const columna2 = document.getElementById('numColumnas2')
 
     //leemos cada celda en orden fila-columna, se repite hasta que el numero de filas coincida
     for (let i = 1; i <= fila2.value; i++) {
@@ -207,23 +205,22 @@ function guardarMatriz (){
 
 function operacionSumar () {
     guardarMatriz()
-    
+    const tablaResultado = document.getElementById('disTabla')
     //traemos el orden de la matriz 1
-    let fila1 = document.getElementById('numFilas1')
-    let columna1 = document.getElementById('numColumnas1')
+    const fila1 = document.getElementById('numFilas1')
+    const columna1 = document.getElementById('numColumnas1')
     
     //traemos el orden de la matriz 2
-    let fila2 = document.getElementById('numFilas2')
-    let columna2 = document.getElementById('numColumnas2')
+    const fila2 = document.getElementById('numFilas2')
+    const columna2 = document.getElementById('numColumnas2')
 
     //creamos la matriz 3 vacia
     matrizC = []
 
     //declaramos el parametro para titulo de la operacion en la tabla resultado
-    let operacion ='Suma A+B'
+    const operacion ='Suma A+B'
     operacionJSON = operacion
-    //se crea la variable donde se va a insertar el elemento html
-    let resultadoImpresion = document.getElementById('resultado') 
+
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
 
@@ -238,38 +235,40 @@ function operacionSumar () {
                 matrizC.push(parseFloat(elemento))
             }
         }
-        //convierte el resultado a json
+        crearTablaResultado(operacion)
+
         resultadoJSON= JSON.stringify(matrizC)
-
-        /* crearTablaResultado(operacion) */
-    } else{
-        let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
-
-        //convierte el resultado a json
-        resultadoJSON = resultado
         
-        /* //imprime el resultado en la pantalla
-        resultadoInvalido(resultado) */
+    } else{
+        const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
+
+        resultadoJSON = resultado
+        resultadoInvalido(resultado)
+
+        if(tablaResultado){
+            tablaResultado.style.display= 'none'
+        }
+
     }
-    
     ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function operacionRestarAB () {
     guardarMatriz()
+    const tablaResultado = document.getElementById('disTabla')
     //traemos el orden de la matriz 1
-    let fila1 = document.getElementById('numFilas1')
-    let columna1 = document.getElementById('numColumnas1')
+    const fila1 = document.getElementById('numFilas1')
+    const columna1 = document.getElementById('numColumnas1')
 
     //traemos el orden de la matriz 2
-    let fila2 = document.getElementById('numFilas2')
-    let columna2 = document.getElementById('numColumnas2')
+    const fila2 = document.getElementById('numFilas2')
+    const columna2 = document.getElementById('numColumnas2')
 
     //creamos la matriz 3 vacia
     matrizC = []
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
-    let operacion = 'Resta A-B'
+    const operacion = 'Resta A-B'
     operacionJSON = operacion
 
     //valida que las filas y columnas sean del mismo tamaño
@@ -285,129 +284,155 @@ function operacionRestarAB () {
                 matrizC.push(parseFloat(elemento))
             }
         }
-/*         crearTablaResultado(operacion) */
+        crearTablaResultado(operacion) 
 
         resultadoJSON= JSON.stringify(matrizC)
         
     } else{
-        let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
+        const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
-        //convierte el resultado a json
         resultadoJSON = resultado
-        
+        resultadoInvalido(resultado) 
 
-/*         resultadoInvalido(resultado) */
+        if(tablaResultado){
+            tablaResultado.style.display= 'none'
+        }
     }
     ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function operacionRestarBA () {
     guardarMatriz()
-    
+    const tablaResultado = document.getElementById('disTabla')
     //traemos el orden de la matriz 1
-    let fila1 = document.getElementById('numFilas1')
-    let columna1 = document.getElementById('numColumnas1')
+    const fila1 = document.getElementById('numFilas1')
+    const columna1 = document.getElementById('numColumnas1')
 
     //traemos el orden de la matriz 2
-    let fila2 = document.getElementById('numFilas2')
-    let columna2 = document.getElementById('numColumnas2')
+    const fila2 = document.getElementById('numFilas2')
+    const columna2 = document.getElementById('numColumnas2')
 
     //creamos la matriz 3 vacia
     matrizC = []
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
-    let operacion = 'Resta B-A'
+    const operacion = 'Resta A-B'
     operacionJSON = operacion
 
     //valida que las filas y columnas sean del mismo tamaño
     if(fila1.value === fila2.value && columna1.value === columna2.value){
         
         //podemos usar cualquiera de las dos matrices para verificar el largo ya que ya validamos que son del mismo orden
-        for (let i = 0; i < matrizA.length; i++) {
-
-            let elemento = parseFloat((matrizB[i])-(matrizA[i]))
+        for (let i = 0; i < matrizB.length; i++) {
+            let elemento =parseFloat((matrizB[i])-(matrizA[i]))
             if(elemento%1 == 0){
                 matrizC.push(elemento)
             }else{
                 elemento = elemento.toFixed(2)
                 matrizC.push(parseFloat(elemento))
             }
-            
         }
+        crearTablaResultado(operacion) 
+
         resultadoJSON= JSON.stringify(matrizC)
 
-        ordenRes = `${fila1.value} x ${columna1.value}`
-
-       /*  crearTablaResultado(operacion) */
     } else{
-        let resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
-         
-        //convierte el resultado a json
+        const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
+        
         resultadoJSON = resultado
+        resultadoInvalido(resultado) 
 
-        /* resultadoInvalido(resultado) */
+        if(tablaResultado){
+            tablaResultado.style.display= 'none'
+        }
     }
+    ordenRes = `${fila1.value} x ${columna1.value}`
 }
 
 function crearTablaResultado(operacion){
     const cantFilTotal = document.getElementById('numFilas1')
     const cantColTotal = document.getElementById('numColumnas1')
     const secTabla = document.getElementById('secTabla')
+    const tablaExistente = document.getElementById('disTabla')
+    const lineaDivExistente = document.querySelector('.parrafo')
 
-    const divEspacio = document.createElement('div')
-    divEspacio.className= 'col-4'
-    
-    const espacio2 =document.createElement('div')
-    espacio2.className = 'col-4'
+    if(!tablaExistente){
+        const divEspacio1 = document.createElement('div')
+        divEspacio1.className= 'col-3'
+        const divEspacio2 = document.createElement('div')
+        divEspacio2.className= 'col-3'
 
-    const lineaDiv = document.createElement('div')
-    lineaDiv.className = 'col-12'
-    lineaDiv.style.textAlign= 'center'
-    lineaDiv.className='parrafo'
-    lineaDiv.style.height= '27px'
-    lineaDiv.style.paddingTop='5px'
-
-    const lineaGris = document.createElement('div')
-    lineaGris.className='col-12'
-    lineaGris.className='separadorBlanco'
-    lineaGris.style.height='1px'
-
-    const table = document.createElement('table')
-    table.id='disTabla'
-    table.className= 'col-4'
-    secTabla.appendChild(lineaDiv)
-    
-    //aqui se pide el parametro para saber que operacion se esta ejecutando
-    lineaDiv.innerHTML= operacion
-    
-    secTabla.appendChild(espacio2) //se crea el espacio para que se centre la tabla
-    
-    //para saber en que elemento del array matrizC va
-    let contador = 0
-    
-    
-    for(let i= 1 ; i<=cantFilTotal.value; i++){
-        //se crea y se inserta una fila en la tabla de resultados
-        const row = document.createElement('tr')
-        table.appendChild(row)
+        const lineaDiv = document.createElement('div')
+        lineaDiv.className = 'col-12'
+        lineaDiv.style.textAlign= 'center'
+        lineaDiv.className='parrafo'
+        lineaDiv.style.height= '27px'
+        lineaDiv.style.paddingTop='5px'
         
-        for(let j = 1; j <=cantColTotal.value; j++ ){
-            let td = document.createElement('td')
-            td.id = `p${i}${j}`
-            td.className = 'td'
-            row.appendChild(td)
-            td.innerHTML = matrizC[contador]
-            contador++
+    
+        const table = document.createElement('table')
+        table.id='disTabla'
+        table.className= 'col-6'
+        
+        //aqui se pide el parametro para saber que operacion se esta ejecutando
+        if (lineaDivExistente) {
+            lineaDivExistente.innerHTML = operacion;
+        }else{
+            secTabla.appendChild(lineaDiv);
+            lineaDiv.innerHTML = operacion;
+        }
+        
+        secTabla.appendChild(divEspacio1) //se crea el espacio para que se centre la tabla
+        
+        //para saber en que elemento del array matrizC va
+        let contador = 0
+        
+        
+        for(let i= 1 ; i<=cantFilTotal.value; i++){
+            //se crea y se inserta una fila en la tabla de resultados
+            const row = document.createElement('tr')
+            table.appendChild(row)
+            
+            for(let j = 1; j <=cantColTotal.value; j++ ){
+                let td = document.createElement('td')
+                td.id = `p${i}${j}`
+                td.className = 'td'
+                td.setAttribute('style', `width:${100/cantColTotal.value}%;`)
+                row.appendChild(td)
+                td.innerHTML = matrizC[contador]
+                contador++
+            }
+        }
+        
+        secTabla.appendChild(table)
+        
+        secTabla.appendChild(divEspacio2)
+        
+    }else{
+        
+        tablaExistente.innerHTML=''
+        //para saber en que elemento del array matrizC va
+        let contador = 0    
+        for(let i= 1 ; i<=cantFilTotal.value; i++){
+            //se crea y se inserta una fila en la tabla de resultados
+            const row = document.createElement('tr')
+            tablaExistente.appendChild(row)
+            tablaExistente.setAttribute('style','')
+            
+            for(let j = 1; j <=cantColTotal.value; j++ ){
+                let td = document.createElement('td')
+                td.id = `p${i}${j}`
+                td.setAttribute('style', `width:${100/cantColTotal.value}%;`)
+                td.className = 'td'
+                row.appendChild(td)
+                td.innerHTML = matrizC[contador]
+                contador++
+            }
+        }
+        if (lineaDivExistente) {
+            lineaDivExistente.innerHTML = operacion;
         }
     }
-    
-       
-    secTabla.appendChild(table)
-    
-
-    
-    secTabla.appendChild(divEspacio)
-    secTabla.appendChild(lineaGris)
 }
 
 function operacionMultiplicacion(){
@@ -417,6 +442,7 @@ function operacionMultiplicacion(){
     const cantCol1 = document.getElementById('numColumnas1')
     const cantFilas2 = document.getElementById('numFilas2')
     const cantCol2 = document.getElementById('numColumnas2')
+    const tablaResultado = document.getElementById('disTabla')
 
     const valorCantFilasA = cantFilas1.value
     const valorCantColA = cantCol1.value
@@ -425,7 +451,7 @@ function operacionMultiplicacion(){
     let matrizAcopia = matrizA
     let matrizBcopia = matrizB
     
-    let operacion = 'Multiplicacion AxB'
+    const operacion = 'Multiplicacion AxB'
     operacionJSON = operacion
     
     if(valorCantColA === valorCantFilasB){
@@ -467,95 +493,128 @@ function operacionMultiplicacion(){
         resultadoJSON= JSON.stringify(matrizC)
         
         ordenRes = `${valorCantFilasA} x ${valorCantColB}`
-        
+
         /*termina if*/
     }else{
-        let resultado='La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'        
+        const resultado='La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'        
         resultadoJSON = resultado
-        console.log('Resultado en JSON:', resultadoJSON)
-
         resultadoInvalido(resultado)
-    }
-}
-
-function crearTablaResultadoMultiplicacion(operacion){
-    const cantFilTotal = document.getElementById('numFilas1')
-    const cantColTotal = document.getElementById('numColumnas2')
-    const secTabla = document.getElementById('secTabla')
-
-    const divEspacio = document.createElement('div')
-    divEspacio.className= 'col-4'
-    
-    const espacio2 =document.createElement('div')
-    espacio2.className = 'col-4'
-
-    const lineaDiv = document.createElement('div')
-    lineaDiv.className = 'col-12'
-    lineaDiv.style.textAlign= 'center'
-    lineaDiv.className='parrafo'
-    lineaDiv.style.height= '27px'
-    lineaDiv.style.paddingTop='5px'
-
-    const table = document.createElement('table')
-    table.id='disTabla'
-    table.className= 'col-4'
-
-    const lineaGris = document.createElement('div')
-    lineaGris.className='col-12'
-    lineaGris.className='separadorBlanco'
-    lineaGris.style.height='1px'
-    
-    secTabla.appendChild(lineaDiv)
-    
-    //aqui se pide el parametro para saber que operacion se esta ejecutando
-    lineaDiv.innerHTML= operacion
-    
-    secTabla.appendChild(espacio2) //se crea el espacio para que se centre la tabla
-    
-    //para saber en que elemento del array matrizC va
-    let contador = 0
-    
-    
-    for(let i= 1 ; i<=cantFilTotal.value; i++){
-        //se crea y se inserta una fila en la tabla de resultados
-        const row = document.createElement('tr')
-        table.appendChild(row)
-
-        for(let j = 1; j <=cantColTotal.value; j++ ){
-            let td = document.createElement('td')
-            td.id = `p${i}${j}`
-            td.className = 'td'
-            row.appendChild(td)
-            td.innerHTML = matrizC[contador]
-            contador++
+        if(tablaResultado){
+            tablaResultado.style.display= 'none'
         }
     }
-    secTabla.appendChild(table)
-    
-    secTabla.appendChild(divEspacio)
-    secTabla.appendChild(lineaGris)
 }
 
-function resultadoInvalido(resultado){
-    let secTabla = document.getElementById('secTabla')
-    
-    const lineaDiv = document.createElement('div')
-    lineaDiv.className = 'col-12'
-    lineaDiv.style.textAlign= 'center'
-    lineaDiv.className='parrafo'
-    lineaDiv.style.height= '30px'
-    lineaDiv.style.paddingTop='10px'
+function crearTablaResultadoMultiplicacion(operacion) {
+    const cantFilTotal = document.getElementById('numFilas1');
+    const cantColTotal = document.getElementById('numColumnas2');
+    const secTabla = document.getElementById('secTabla');
 
-    lineaDiv.append(resultado)
-    secTabla.appendChild(lineaDiv)
+    // Buscar si ya existe una tabla previa
+    let tablaExistente = document.getElementById('disTabla');
+    let lineaDivExistente = secTabla.querySelector('.parrafo');
 
-    const lineaGris = document.createElement('div')
-    lineaGris.className='col-12'
-    lineaGris.className='separadorBlanco'
-    lineaGris.style.height='10px'
-    secTabla.appendChild(lineaGris)
+    if (tablaExistente) {
+        // Si existe una tabla, limpiarla y actualizar su contenido
+        tablaExistente.innerHTML = '';
+        let contador = 0;
+
+        for (let i = 1; i <= cantFilTotal.value; i++) {
+            const row = document.createElement('tr');
+            tablaExistente.appendChild(row);
+            tablaExistente.setAttribute('style','')
+
+            for (let j = 1; j <= cantColTotal.value; j++) {
+                const td = document.createElement('td');
+                td.id = `p${i}${j}`;
+                td.className = 'td';
+                td.setAttribute('style', `width:${100/cantColTotal.value}%;`)
+                td.innerHTML = matrizC[contador];
+                row.appendChild(td);
+                contador++;
+            }
+        }
+
+        // Actualizar el texto de la operación si ya existe
+        if (lineaDivExistente) {
+            lineaDivExistente.innerHTML = operacion;
+        }
+        
+    } else {
+        // Crear y añadir los elementos si no existen
+        const divEspacio = document.createElement('div');
+        divEspacio.className = 'col-3';
+        
+        const espacio2 = document.createElement('div');
+        espacio2.className = 'col-3';
+        
+        const lineaDiv = document.createElement('div');
+        lineaDiv.className = 'col-12 parrafo';
+        lineaDiv.style.textAlign = 'center';
+        lineaDiv.style.height = '27px';
+        lineaDiv.style.paddingTop = '5px';
+        
+        const table = document.createElement('table');
+        table.id = 'disTabla';
+        table.className = 'col-6';
+        
+        // Añadir texto de operación
+        if (lineaDivExistente) {
+            lineaDivExistente.innerHTML = operacion;
+        }else{
+            lineaDiv.innerHTML = operacion;
+            secTabla.appendChild(lineaDiv);
+        }
+        
+        // Crear tabla
+        let contador = 0;
+        
+        for (let i = 1; i <= cantFilTotal.value; i++) {
+            const row = document.createElement('tr');
+            table.appendChild(row);
+            
+            for (let j = 1; j <= cantColTotal.value; j++) {
+                const td = document.createElement('td');
+                td.id = `p${i}${j}`;
+                td.className = 'td';
+                td.setAttribute('style', `width:${100/cantColTotal.value}%;`)
+                td.innerHTML = matrizC[contador];
+                row.appendChild(td);
+                contador++;
+            }
+        }
+
+        secTabla.appendChild(espacio2); // Añadir espacio para centrar la tabla
+        secTabla.appendChild(table);
+        secTabla.appendChild(divEspacio);
+    }
 }
 
+function resultadoInvalido(resultado) {
+    const secTabla = document.getElementById('secTabla');
+    
+    // Buscar si ya existe un elemento con la clase 'parrafo'
+    let lineaDiv = secTabla.querySelector('.parrafo');
+    
+    // Si ya existe, reemplazar el texto
+    if (lineaDiv) {
+        lineaDiv.textContent = resultado;
+    } else {
+        // Crear el div si no existe
+        lineaDiv = document.createElement('div');
+        lineaDiv.className = 'col-12 parrafo';
+        lineaDiv.style.textAlign = 'center';
+        lineaDiv.style.height = '30px';
+        lineaDiv.style.paddingTop = '10px';
+        lineaDiv.textContent = resultado;
+        secTabla.appendChild(lineaDiv);
+    }
+}
+
+function historial(){
+    const secTabla = document.getElementById('secTabla')
+    
+}
 
 function  resultadosBD(){
     const datos = {
