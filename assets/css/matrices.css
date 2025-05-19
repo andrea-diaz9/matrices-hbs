@@ -82,3 +82,27 @@
     border-color:blueviolet;
     background-color:white;
 }
+
+#tablaHistorial{
+    text-align: center;
+    border: 1px black  solid;
+}
+
+#colTablaHist{
+    border: 1px black solid;
+}
+
+ #celdaTitulo{
+    border: 1px black solid;
+    color: whitesmoke;
+    background-color: rgb(88, 14, 137);
+}
+
+#celdaRes{
+    border: 1px black solid;
+    background-color: rgb(200, 161, 226);
+}
+
+.resultadoMatriz{
+    font-weight: bolder;
+}

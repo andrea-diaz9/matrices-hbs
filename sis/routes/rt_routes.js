@@ -25,5 +25,27 @@ router.post('/opera',   async (req, res) => {
     } 
 })
 
+router.get('/historial', async(req,res) => {
+    try{
+        const pool = await conexion_db()
+
+        const resultado = await pool.request().query("SELECT idOp, ordenA, matrizA, ordenB, "
+            +"matrizB, tipoOp, ordenR, resultado,"
+            +"FORMAT(fechaOp, 'dd/MM/yyyy HH:mm') AS fechaOp FROM operaciones ORDER BY idOp DESC;")
+
+        const datos = resultado.recordset
+        console.log('datos mostrados')
+        res.render('calculadora', {
+            title: 'Historial',
+            datos: datos
+        })
+    }catch(err){
+        console.error('error en query', err)
+        throw err
+    }
+})
+
+
 console.log ('conexion en routes: ', conexion_db)
+
 module.exports = router 

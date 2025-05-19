@@ -22,18 +22,22 @@ function iniciar(){
     const sumar  =document.getElementById('btnSumar')
     sumar.addEventListener('click',operacionSumar)
     sumar.addEventListener('click', showbtnGuardarBD)
+    sumar.addEventListener('click', hideMensajeBD)
 
     const restarAB =document.getElementById('btnRestarAB')
     restarAB.addEventListener('click', operacionRestarAB)
     restarAB.addEventListener('click', showbtnGuardarBD)
+    restarAB.addEventListener('click', hideMensajeBD)
 
     const restarBA =document.getElementById('btnRestarBA')
     restarBA.addEventListener('click', operacionRestarBA)
     restarBA.addEventListener('click', showbtnGuardarBD)
+    restarBA.addEventListener('click', hideMensajeBD)
 
     const btnMultiplicar = document.getElementById('btnMultiplicarAB')
     btnMultiplicar.addEventListener('click', operacionMultiplicacion)
     btnMultiplicar.addEventListener('click', showbtnGuardarBD)
+    btnMultiplicar.addEventListener('click', hideMensajeBD)
     
     const btnGuardarBD = document.getElementById('btnGuardarBD')
     btnGuardarBD.addEventListener('click', resultadosBD)
@@ -64,14 +68,27 @@ function clickGuardar(){
    /* datos() */
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
-    
     const historial= document.getElementById('historial')
     historial.style.display='block'
+
 }
 
 function showbtnGuardarBD(){
     const btnGuardarBD = document.getElementById('btnGuardarBD')
     btnGuardarBD.style.display='block'
+    btnGuardarBD.addEventListener('click', showMensajeBD)
+}
+
+function showMensajeBD(){
+    const guardadoBD = document.getElementById('GuardadoBD')
+    guardadoBD.style.display='block'
+    const p = '<p>Se guardo a la BD 😁! </p>'
+    guardadoBD.innerHTML = p
+}
+
+function hideMensajeBD(){
+    const guardadoBD = document.getElementById('GuardadoBD')
+    guardadoBD.style.display='none'
 }
 
 function declararOrden1(){
@@ -655,11 +672,6 @@ function resultadoInvalido(resultado) {
         lineaDiv.textContent = resultado;
         secTabla.appendChild(lineaDiv);
     }
-}
-
-function historial(){
-    const secTabla = document.getElementById('secTabla')
-    
 }
 
 function  resultadosBD(){

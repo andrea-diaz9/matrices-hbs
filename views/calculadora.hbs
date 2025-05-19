@@ -78,11 +78,13 @@
                 <div class="col-2">
                     <button id="btnGuardarBD" style="display: none; width: 100%">Guardar a BD</button>
                 </div>
+                <div class="col-5" id="GuardadoBD" style="display: none;" >
+                </div>
             </div>
     </section>
 
     
-    <section class="row" style="height: 50px;"></section>
+    <section class="row" style="height: 30px;"></section>
     
     {{!-- Espacio para el historial --}}
     <section class="row">
@@ -94,7 +96,40 @@
         <div class="row" id="secTabla" style="padding: 0px; margin: 0px"></div>
     </section>
 
+    <section class="row" style="height: 50px"></section>
+    
     <section id="historial" style="display: none;">
+        <h5 style="text-align: center;">{{title}}</h5>
+        <table id="tablaHistorial" class="col-12">
+            <thead id="colTablaHist">
+                <tr>
+                    <th id="celdaTitulo" style="width: 75px;">ID</th>
+                    <th id="celdaTitulo" style="width: 75px;">Orden A</th>
+                    <th id="celdaTitulo">Matriz A</th>
+                    <th id="celdaTitulo" style="width: 75px;">Orden B</th>
+                    <th id="celdaTitulo">Matriz B</th>
+                    <th id="celdaTitulo">Operación</th>
+                    <th id="celdaTitulo" style="width: 95px;">Orden Resultado</th>
+                    <th id="celdaTitulo" style="width: 250px;">Resultado</th>
+                    <th id="celdaTitulo">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each datos}}
+                <tr>
+                    <td id="celdaRes">{{this.idOp}}</td>
+                    <td id="celdaRes">{{this.ordenA}}</td>
+                    <td id="celdaRes" style="width: 100px;">{{this.matrizA}}</td>
+                    <td id="celdaRes">{{this.ordenB}}</td>
+                    <td id="celdaRes" style="width: 100px;">{{this.matrizB}}</td>
+                    <td id="celdaRes" style="width: 100px;">{{this.tipoOp}}</td>
+                    <td id="celdaRes" class="resultadoMatriz">{{this.ordenR}}</td>
+                    <td id="celdaRes" class="resultadoMatriz" >{{this.resultado}}</td>
+                    <td id="celdaRes" style="width: 150px;">{{this.fechaOp}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
     </section>
     
 
