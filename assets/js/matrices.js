@@ -64,6 +64,9 @@ function clickGuardar(){
    /* datos() */
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
+    
+    const historial= document.getElementById('historial')
+    historial.style.display='block'
 }
 
 function showbtnGuardarBD(){

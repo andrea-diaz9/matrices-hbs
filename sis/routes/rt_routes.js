@@ -25,4 +25,5 @@ router.post('/opera',   async (req, res) => {
     } 
 })
 
+console.log ('conexion en routes: ', conexion_db)
 module.exports = router 
