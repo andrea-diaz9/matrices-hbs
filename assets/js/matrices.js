@@ -21,26 +21,19 @@ function iniciar(){
 
     const sumar  =document.getElementById('btnSumar')
     sumar.addEventListener('click',operacionSumar)
-    sumar.addEventListener('click', showbtnGuardarBD)
-    sumar.addEventListener('click', hideMensajeBD)
+    sumar.addEventListener('click', resultadosBD)
 
     const restarAB =document.getElementById('btnRestarAB')
     restarAB.addEventListener('click', operacionRestarAB)
-    restarAB.addEventListener('click', showbtnGuardarBD)
-    restarAB.addEventListener('click', hideMensajeBD)
+    restarAB.addEventListener('click', resultadosBD)
 
     const restarBA =document.getElementById('btnRestarBA')
     restarBA.addEventListener('click', operacionRestarBA)
-    restarBA.addEventListener('click', showbtnGuardarBD)
-    restarBA.addEventListener('click', hideMensajeBD)
+    restarBA.addEventListener('click', resultadosBD)
 
     const btnMultiplicar = document.getElementById('btnMultiplicarAB')
     btnMultiplicar.addEventListener('click', operacionMultiplicacion)
-    btnMultiplicar.addEventListener('click', showbtnGuardarBD)
-    btnMultiplicar.addEventListener('click', hideMensajeBD)
-    
-    const btnGuardarBD = document.getElementById('btnGuardarBD')
-    btnGuardarBD.addEventListener('click', resultadosBD)
+    btnMultiplicar.addEventListener('click', resultadosBD)
 }
 
 function elegirOtroOrden(){
@@ -69,26 +62,8 @@ function clickGuardar(){
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
     const historial= document.getElementById('historial')
-    historial.style.display='block'
+    historial.style.display='none'
 
-}
-
-function showbtnGuardarBD(){
-    const btnGuardarBD = document.getElementById('btnGuardarBD')
-    btnGuardarBD.style.display='block'
-    btnGuardarBD.addEventListener('click', showMensajeBD)
-}
-
-function showMensajeBD(){
-    const guardadoBD = document.getElementById('GuardadoBD')
-    guardadoBD.style.display='block'
-    const p = '<p>Se guardo a la BD 😁! </p>'
-    guardadoBD.innerHTML = p
-}
-
-function hideMensajeBD(){
-    const guardadoBD = document.getElementById('GuardadoBD')
-    guardadoBD.style.display='none'
 }
 
 function declararOrden1(){
@@ -357,7 +332,7 @@ function operacionRestarBA () {
     matrizC = []
 
     //declaramos el variable para titulo de la operacion en la tabla resultado
-    const operacion = 'Resta A-B'
+    const operacion = 'Resta B-A'
     operacionJSON = operacion
 
     //valida que las filas y columnas sean del mismo tamaño
