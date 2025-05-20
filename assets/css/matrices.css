@@ -101,8 +101,10 @@
 #celdaRes{
     border: 1px black solid;
     background-color: rgb(200, 161, 226);
+    font-size: small;
 }
 
 .resultadoMatriz{
     font-weight: bolder;
+    font-size: small;
 }
