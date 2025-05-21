@@ -1,0 +1,34 @@
+<section id="historial" style="display: block;" class="row">
+        <h5 style="text-align: center;" class="col-12">{{title}}</h5>
+        
+        <table id="tablaHistorial" class="col-12">
+            <thead id="colTablaHist" >
+                <tr>
+                    <th id="celdaTitulo" class="col-1">ID</th>
+                    <th id="celdaTitulo">Orden A</th>
+                    <th id="celdaTitulo">Matriz A</th>
+                    <th id="celdaTitulo">Orden B</th>
+                    <th id="celdaTitulo">Matriz B</th>
+                    <th id="celdaTitulo">Operación</th>
+                    <th id="celdaTitulo">Orden Resultado</th>
+                    <th id="celdaTitulo">Resultado</th>
+                    <th id="celdaTitulo">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each datos}}
+                <tr>
+                    <td id="celdaRes" style="height: 20px;">{{this.idOp}}</td>
+                    <td id="celdaRes">{{this.ordenA}}</td>
+                    <td id="celdaRes">{{this.matrizA}}</td>
+                    <td id="celdaRes">{{this.ordenB}}</td>
+                    <td id="celdaRes">{{this.matrizB}}</td>
+                    <td id="celdaRes">{{this.tipoOp}}</td>
+                    <td id="celdaRes" class="resultadoMatriz">{{this.ordenR}}</td>
+                    <td id="celdaRes" class="resultadoMatriz" style="font-size: small;" >{{this.resultado}}</td>
+                    <td id="celdaRes" style="font-size: small;">{{this.fechaOp}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>

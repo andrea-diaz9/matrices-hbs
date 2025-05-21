@@ -25,7 +25,7 @@ router.post('/opera',   async (req, res) => {
     } 
 })
 
-router.get('/', async(req,res) => {
+router.get('/historial', async(req,res) => {
     try{
         const pool = await conexion_db()
 

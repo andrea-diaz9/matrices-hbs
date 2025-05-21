@@ -44,41 +44,6 @@
         </div>
         <div class="col-5" style="padding: 0px; margin: 0px;"></div>
     </section>
-
-    <section id="historial" style="display: block;" class="row">
-        <h5 style="text-align: center;" class="col-12">{{title}}</h5>
-        
-        <table id="tablaHistorial" class="col-12">
-            <thead id="colTablaHist" >
-                <tr>
-                    <th id="celdaTitulo" class="col-1">ID</th>
-                    <th id="celdaTitulo" class="col-1">Orden A</th>
-                    <th id="celdaTitulo" class="col-2">Matriz A</th>
-                    <th id="celdaTitulo" class="col-1">Orden B</th>
-                    <th id="celdaTitulo" class="col-2">Matriz B</th>
-                    <th id="celdaTitulo" class="col-1">Operación</th>
-                    <th id="celdaTitulo" class="col-1">Orden Resultado</th>
-                    <th id="celdaTitulo" class="col-2">Resultado</th>
-                    <th id="celdaTitulo" class="col-1">Fecha</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each datos}}
-                <tr>
-                    <td id="celdaRes">{{this.idOp}}</td>
-                    <td id="celdaRes">{{this.ordenA}}</td>
-                    <td id="celdaRes">{{this.matrizA}}</td>
-                    <td id="celdaRes">{{this.ordenB}}</td>
-                    <td id="celdaRes">{{this.matrizB}}</td>
-                    <td id="celdaRes">{{this.tipoOp}}</td>
-                    <td id="celdaRes" class="resultadoMatriz">{{this.ordenR}}</td>
-                    <td id="celdaRes" class="resultadoMatriz" style="font-size: small;" >{{this.resultado}}</td>
-                    <td id="celdaRes" style="font-size: small;">{{this.fechaOp}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </section>
     <section class="row" style="height: 50px;"></section>
 
     <section class="row"> <!--espacio para que se inserten los input:number-->

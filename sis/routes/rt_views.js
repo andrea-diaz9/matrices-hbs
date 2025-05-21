@@ -3,7 +3,7 @@ const router = express.Router()
 /* const inicio = require('../controllers/ctrl_inicio')  */
 
 // Inicio 
-router.get('/calculadora', (req, res) => {
+router.get('/', (req, res) => {
     res.render('calculadora'); 
 });
 
