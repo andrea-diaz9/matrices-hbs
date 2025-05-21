@@ -44,6 +44,7 @@ function clickGuardar(){
     const btnGuardar  = document.getElementById('btnGuardar')
     const btnElegirOtroOrden = document.getElementById('btnElegirOtroOrden')
     const sectionOrden = document.getElementById('delcararOrden')
+    const btnHistorial = document.getElementById('btnHistorial')
     
     const sctBotones = document.getElementById('sctBotones')
     //se deja de mostrar cuando clickeamos guardar
@@ -53,6 +54,7 @@ function clickGuardar(){
     //aparecen para poder hacer las operaciones
     btnElegirOtroOrden.style.display='block'
     sctBotones.style.display = 'block'
+    btnHistorial.style.display = 'block'
 
 
     declararOrden1();
@@ -61,8 +63,6 @@ function clickGuardar(){
    /* datos() */
 
     btnElegirOtroOrden.addEventListener('click', elegirOtroOrden)
-    const historial= document.getElementById('historial')
-    historial.style.display='none'
 
 }
 
