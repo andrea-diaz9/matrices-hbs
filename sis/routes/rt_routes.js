@@ -3,6 +3,7 @@ const { conexion_db } = require('../config/DB.JS')
 const router = express.Router() 
 const sql = require("mssql");
 
+
 // Inicio 
 router.post('/opera',   async (req, res) => {
     const { ordenAjson, matrizAjson, ordenBjson, matrizBjson, operacionJSON, resultadoJSON, ordenRes } = req.body
@@ -35,7 +36,7 @@ router.get('/historial', async(req,res) => {
 
         const datos = resultado.recordset
         console.log('datos mostrados')
-        res.render('calculadora', {
+        res.render('historial', {
             title: 'Historial',
             datos: datos
         })
