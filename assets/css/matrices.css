@@ -102,6 +102,7 @@
 
 #colTablaHist{
     border: 1px black solid;
+    
 }
 
  #celdaTitulo{
@@ -118,5 +119,4 @@
 
 .resultadoMatriz{
     font-weight: bolder;
-    font-size: small;
 }
