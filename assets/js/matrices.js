@@ -388,7 +388,6 @@ function crearTablaResultado(operacion){
         //para saber en que elemento del array matrizC va
         let contador = 0
         
-        
         for(let i= 1 ; i<=cantFilTotal.value; i++){
             //se crea y se inserta una fila en la tabla de resultados
             const row = document.createElement('tr')

@@ -74,6 +74,14 @@
     border-color:blueviolet;
     background-color:white;
 }
+
+ #btnVisualizar{
+    width: 80%;
+    border-radius: 20px;
+    border-color:blueviolet;
+    background-color:rgb(200, 161, 226);
+}
+
 #btnSumar:hover,
 #btnGuardar:hover,
 #btnElegirOtroOrden:hover,
@@ -82,9 +90,11 @@
 #btnMultiplicarAB:hover,
 #btnHistorial:hover,
 #btnInicio:hover{
-    background-color: rgb(198, 157, 237);
+background-color: rgb(198, 157, 237);
 }
-
+#btnVisualizar:hover{
+    background-color: white;
+}
 #btnMultiplicarAB{
     margin-right:10%;
     width: 80%;

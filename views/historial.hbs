@@ -39,8 +39,9 @@
                 <th id="celdaTitulo" class="col-1">Matriz B</th>
                 <th id="celdaTitulo">Operación</th>
                 <th id="celdaTitulo">Orden<br>Resultado</th>
-                <th id="celdaTitulo"class="col-5">Resultado</th>
+                <th id="celdaTitulo"class="col-4">Resultado</th>
                 <th id="celdaTitulo" class="col-1">Fecha</th>
+                <th id="celdaTitulo" class="col-1">Visualización</th>
             </tr>
         </thead>
             <tbody>
@@ -55,6 +56,7 @@
                     <td id="celdaRes" class="resultadoMatriz">{{this.ordenR}}</td>
                     <td id="celdaRes" class="resultadoMatriz">{{this.resultado}}</td>
                     <td id="celdaRes">{{this.fechaOp}}</td>
+                    <td id="celdaRes"><button id="btnVisualizar">VER</button></td>
                 </tr>
                 {{/each}}
             </tbody>
