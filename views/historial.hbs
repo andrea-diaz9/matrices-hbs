@@ -46,7 +46,7 @@
         </thead>
             <tbody>
                 {{#each datos}}
-                <tr>
+                <tr id="{{this.idOp}}">
                     <td id="celdaRes">{{this.idOp}}</td>
                     <td id="celdaRes">{{this.ordenA}}</td>
                     <td id="celdaRes">{{this.matrizA}}</td>
@@ -56,7 +56,7 @@
                     <td id="celdaRes" class="resultadoMatriz">{{this.ordenR}}</td>
                     <td id="celdaRes" class="resultadoMatriz">{{this.resultado}}</td>
                     <td id="celdaRes">{{this.fechaOp}}</td>
-                    <td id="celdaRes"><button id="btnVisualizar">VER</button></td>
+                    <td id="celdaRes"> <a href="/operacionId" style="text-decoration: none;" ><button id="btnVisualizar">VER</button> </a> </td>
                 </tr>
                 {{/each}}
             </tbody>
