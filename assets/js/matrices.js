@@ -190,10 +190,10 @@ function guardarMatriz (){
             }
         }
     }
-    ordenAjson = `${fila1.value}x${columna1.value}`
+    ordenAjson = `${fila1.value} x ${columna1.value}`
     matrizAjson= (JSON.stringify(matrizA)).replaceAll(",", ", ")
 
-    ordenBjson = `${fila2.value}x${columna2.value}`
+    ordenBjson = `${fila2.value} x ${columna2.value}`
     matrizBjson= (JSON.stringify(matrizB)).replaceAll(",", ", ")
     matrizC=[]
 }
