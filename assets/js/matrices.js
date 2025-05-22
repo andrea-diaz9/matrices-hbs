@@ -234,7 +234,7 @@ function operacionSumar () {
 
         resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
 
-        ordenRes = `${fila1.value}x${columna1.value}`
+        ordenRes = `${fila1.value} x ${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
 
@@ -285,7 +285,7 @@ function operacionRestarAB () {
 
         resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
         
-        ordenRes = `${fila1.value}x${columna1.value}`
+        ordenRes = `${fila1.value} x ${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
@@ -335,7 +335,7 @@ function operacionRestarBA () {
 
         resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
         
-        ordenRes = `${fila1.value}x${columna1.value}`
+        ordenRes = `${fila1.value} x ${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
@@ -493,7 +493,7 @@ function operacionMultiplicacion(){
 
         resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
         
-        ordenRes = `${valorCantFilasA}x${valorCantColB}`
+        ordenRes = `${valorCantFilasA} x ${valorCantColB}`
 
         /*termina if*/
     }else{
