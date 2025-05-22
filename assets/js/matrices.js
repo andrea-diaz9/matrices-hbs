@@ -654,20 +654,35 @@ function  resultadosBD(){
 }
 
 function resJSONaINT(){
+    //matrizA
     const purosNumerosA = matrizAjson.replace("[",'').replace("]",'').split(",")
     const arrMatrizA = []
     purosNumerosA.forEach( element => {
         arrMatrizA.push(parseInt(element))
     });
     console.log('MatrizA:',arrMatrizA)
-
+    
+    //matrizB
     const purosNumerosB = matrizBjson.replace("[",'').replace("]",'').split(",")
     const arrMatrizB = []
     purosNumerosB.forEach( element => {
         arrMatrizB.push(parseInt(element))
     });
     console.log('MatrizB:',arrMatrizB)
+    
+    //ordenResultado
+    if(ordenRes=='N/A'){
+        console.log(ordenRes)
+    }else{
+        const matrizOrdenResultado = []
+        const purosNumerosR = ordenRes.replace(' x ', ' ').split(' ')
+        purosNumerosR.forEach(element => {
+            matrizOrdenResultado.push(parseInt(element))
+        })
+        console.log('Orden Resultado:', matrizOrdenResultado)
+    }
 
+    //resultado (matriz o letra)
     if(resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma' || resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta' || resultadoJSON == 'La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'){
         console.log(resultadoJSON)
     }else{
