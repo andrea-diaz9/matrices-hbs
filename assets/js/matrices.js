@@ -190,11 +190,11 @@ function guardarMatriz (){
             }
         }
     }
-    ordenAjson = `${fila1.value} x ${columna1.value}`
-    matrizAjson= JSON.stringify(matrizA)
-    ordenBjson = `${fila2.value} x ${columna2.value}`
-    matrizBjson= JSON.stringify(matrizB)
+    ordenAjson = `${fila1.value}x${columna1.value}`
+    matrizAjson= (JSON.stringify(matrizA)).replaceAll(",", ", ")
 
+    ordenBjson = `${fila2.value}x${columna2.value}`
+    matrizBjson= (JSON.stringify(matrizB)).replaceAll(",", ", ")
     matrizC=[]
 }
 
@@ -232,9 +232,9 @@ function operacionSumar () {
         }
         crearTablaResultado(operacion)
 
-        resultadoJSON= JSON.stringify(matrizC)
+        resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
 
-        ordenRes = `${fila1.value} x ${columna1.value}`
+        ordenRes = `${fila1.value}x${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma'
 
@@ -244,18 +244,10 @@ function operacionSumar () {
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
-        ordenRes =''
+        ordenRes ='N/A'
     }
-    let datosConsola = {
-        ordenAjson,
-        matrizAjson,
-        ordenBjson,
-        matrizBjson,
-        operacionJSON,
-        ordenRes,
-        resultadoJSON
-    }
-    console.log(operacionJSON,':',datosConsola)
+    consolaResultados()
+    
 }
 
 function operacionRestarAB () {
@@ -291,9 +283,9 @@ function operacionRestarAB () {
         }
         crearTablaResultado(operacion) 
 
-        resultadoJSON= JSON.stringify(matrizC)
+        resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
         
-        ordenRes = `${fila1.value} x ${columna1.value}`
+        ordenRes = `${fila1.value}x${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
@@ -303,18 +295,9 @@ function operacionRestarAB () {
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
-        ordenRes =''
+        ordenRes ='N/A'
     }
-    let datosConsola = {
-        ordenAjson,
-        matrizAjson,
-        ordenBjson,
-        matrizBjson,
-        operacionJSON,
-        ordenRes,
-        resultadoJSON
-    }
-    console.log(operacionJSON,':',datosConsola)
+    consolaResultados()
 }
 
 function operacionRestarBA () {
@@ -350,9 +333,9 @@ function operacionRestarBA () {
         }
         crearTablaResultado(operacion) 
 
-        resultadoJSON= JSON.stringify(matrizC)
+        resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
         
-        ordenRes = `${fila1.value} x ${columna1.value}`
+        ordenRes = `${fila1.value}x${columna1.value}`
     } else{
         const resultado='El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta'
         
@@ -362,18 +345,9 @@ function operacionRestarBA () {
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
-        ordenRes =''
+        ordenRes ='N/A'
     }
-    let datosConsola = {
-        ordenAjson,
-        matrizAjson,
-        ordenBjson,
-        matrizBjson,
-        operacionJSON,
-        ordenRes,
-        resultadoJSON
-    }
-    console.log(operacionJSON,':',datosConsola)
+    consolaResultados()
 }
 
 function crearTablaResultado(operacion){
@@ -517,9 +491,9 @@ function operacionMultiplicacion(){
         }
         crearTablaResultadoMultiplicacion(operacion)        
 
-        resultadoJSON= JSON.stringify(matrizC)
+        resultadoJSON= (JSON.stringify(matrizC)).replaceAll(",", ", ")
         
-        ordenRes = `${valorCantFilasA} x ${valorCantColB}`
+        ordenRes = `${valorCantFilasA}x${valorCantColB}`
 
         /*termina if*/
     }else{
@@ -529,18 +503,9 @@ function operacionMultiplicacion(){
         if(tablaResultado){
             tablaResultado.style.display= 'none'
         }
-        ordenRes =''
+        ordenRes ='N/A'
     }
-    let datosConsola = {
-        ordenAjson,
-        matrizAjson,
-        ordenBjson,
-        matrizBjson,
-        operacionJSON,
-        ordenRes,
-        resultadoJSON
-    }
-    console.log(operacionJSON,':',datosConsola)
+    consolaResultados()
 }
 
 function crearTablaResultadoMultiplicacion(operacion) {
@@ -649,6 +614,20 @@ function resultadoInvalido(resultado) {
     }
 }
 
+function consolaResultados(){
+    let datosConsola = {
+        ordenAjson,
+        matrizAjson,
+        ordenBjson,
+        matrizBjson,
+        operacionJSON,
+        ordenRes,
+        resultadoJSON
+    }
+    console.log(operacionJSON,':',datosConsola)
+    resJSONaINT()
+}
+
 function  resultadosBD(){
     const datos = {
         ordenAjson,
@@ -659,7 +638,7 @@ function  resultadosBD(){
         operacionJSON,
         resultadoJSON
     }
-
+    
     fetch('/opera',{
         method: 'POST',
         headers: {
@@ -672,4 +651,31 @@ function  resultadosBD(){
         console.log('Se guardó en BD')
     })
     .catch(err => console.log('error al imprimir', err))
+}
+
+function resJSONaINT(){
+    const purosNumerosA = matrizAjson.replace("[",'').replace("]",'').split(",")
+    const arrMatrizA = []
+    purosNumerosA.forEach( element => {
+        arrMatrizA.push(parseInt(element))
+    });
+    console.log('MatrizA:',arrMatrizA)
+
+    const purosNumerosB = matrizBjson.replace("[",'').replace("]",'').split(",")
+    const arrMatrizB = []
+    purosNumerosB.forEach( element => {
+        arrMatrizB.push(parseInt(element))
+    });
+    console.log('MatrizB:',arrMatrizB)
+
+    if(resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma' || resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta' || resultadoJSON == 'La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'){
+        console.log(resultadoJSON)
+    }else{
+        const purosNumerozC = resultadoJSON.replace("[",'').replace("]",'').split(",")
+        const arrMatrizC = []
+        purosNumerozC.forEach( element => {
+            arrMatrizC.push(parseInt(element))
+        });
+        console.log('Resultado:',arrMatrizC)
+    }
 }

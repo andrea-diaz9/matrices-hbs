@@ -34,19 +34,19 @@
             <tr>
                 <th id="celdaTitulo" class="col-1">ID</th>
                 <th id="celdaTitulo">Orden A</th>
-                <th id="celdaTitulo">Matriz A</th>
+                <th id="celdaTitulo" class="col-1">Matriz A</th>
                 <th id="celdaTitulo">Orden B</th>
-                <th id="celdaTitulo">Matriz B</th>
+                <th id="celdaTitulo" class="col-1">Matriz B</th>
                 <th id="celdaTitulo">Operación</th>
-                <th id="celdaTitulo">Orden Resultado</th>
-                <th id="celdaTitulo">Resultado</th>
-                <th id="celdaTitulo">Fecha</th>
+                <th id="celdaTitulo">Orden<br>Resultado</th>
+                <th id="celdaTitulo"class="col-5">Resultado</th>
+                <th id="celdaTitulo" class="col-1">Fecha</th>
             </tr>
         </thead>
             <tbody>
                 {{#each datos}}
                 <tr>
-                    <td id="celdaRes" style="height: 20px;">{{this.idOp}}</td>
+                    <td id="celdaRes">{{this.idOp}}</td>
                     <td id="celdaRes">{{this.ordenA}}</td>
                     <td id="celdaRes">{{this.matrizA}}</td>
                     <td id="celdaRes">{{this.ordenB}}</td>
