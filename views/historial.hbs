@@ -46,22 +46,27 @@
         </thead>
             <tbody>
                 {{#each datos}}
-                <tr id="{{this.idOp}}">
-                    <td id="celdaRes">{{this.idOp}}</td>
-                    <td id="celdaRes">{{this.ordenA}}</td>
-                    <td id="celdaRes">{{this.matrizA}}</td>
-                    <td id="celdaRes">{{this.ordenB}}</td>
-                    <td id="celdaRes">{{this.matrizB}}</td>
-                    <td id="celdaRes">{{this.tipoOp}}</td>
-                    <td id="celdaRes" class="resultadoMatriz">{{this.ordenR}}</td>
-                    <td id="celdaRes" class="resultadoMatriz">{{this.resultado}}</td>
-                    <td id="celdaRes">{{this.fechaOp}}</td>
-                    <td id="celdaRes"> <a href="/operacionId" style="text-decoration: none;" ><button id="btnVisualizar">VER</button> </a> </td>
+                <tr>
+                    <td id="{{this.idOp}}-id" class="celdaRes">{{this.idOp}}</td>
+                    <td id="{{this.idOp}}-ordenA" class="celdaRes">{{this.ordenA}}</td>
+                    <td id="{{this.idOp}}-matrizA" class="celdaRes">{{this.matrizA}}</td>
+                    <td id="{{this.idOp}}-ordenB" class="celdaRes">{{this.ordenB}}</td>
+                    <td id="{{this.idOp}}-matrizB" class="celdaRes">{{this.matrizB}}</td>
+                    <td id="{{this.idOp}}-Operacion" class="celdaRes">{{this.tipoOp}}</td>
+                    <td id="{{this.idOp}}-ordenR" class="celdaRes-resultadoMatriz">{{this.ordenR}}</td>
+                    <td id="{{this.idOp}}-matrizR" class="celdaRes-resultadoMatriz">{{this.resultado}}</td>
+                    <td id="{{this.idOp}}-fecha" class="celdaRes">{{this.fechaOp}}</td>
+                    <td  class="celdaRes"> 
+                        <a href="/operacionId" style="text-decoration: none;" >
+                            <button class="btnVisualizar" id="{{this.idOp}}-ver">VER</button> 
+                        </a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </section>
-
+    <script src="/js/historial.js"></script>
+    <script src="/js/matrices.js"></script>
 </body>
 </html>
