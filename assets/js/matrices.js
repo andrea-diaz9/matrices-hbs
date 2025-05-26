@@ -666,7 +666,7 @@ function resJSONaINT(){
     ordenAnum.forEach(element => {
         arrOrdenAnums.push(parseInt(element))
     });
-    console.log('Orden A:', arrOrdenAnums)
+    console.log('arrOrdenAnums:', arrOrdenAnums)
 
     //matrizA
     const purosNumerosA = matrizAjson.replace("[",'').replace("]",'').split(",")
@@ -674,7 +674,7 @@ function resJSONaINT(){
     purosNumerosA.forEach( element => {
         arrMatrizA.push(parseInt(element))
     });
-    console.log('MatrizA:',arrMatrizA)
+    console.log('arrMatrizA:',arrMatrizA)
 
     //orden B
     const ordenBnum= ordenBjson.split(' x ')
@@ -682,7 +682,7 @@ function resJSONaINT(){
     ordenBnum.forEach(element => {
         arrOrdenBnums.push(parseInt(element))
     });
-    console.log('Orden B:', arrOrdenBnums)
+    console.log('arrOrdenBnums:', arrOrdenBnums)
     
     //matrizB
     const purosNumerosB = matrizBjson.replace("[",'').replace("]",'').split(",")
@@ -690,7 +690,7 @@ function resJSONaINT(){
     purosNumerosB.forEach( element => {
         arrMatrizB.push(parseInt(element))
     });
-    console.log('MatrizB:',arrMatrizB)
+    console.log('arrMatrizB:',arrMatrizB)
     
     //ordenResultado
     if(ordenRes=='N/A'){
@@ -701,7 +701,7 @@ function resJSONaINT(){
         purosNumerosR.forEach(element => {
             matrizOrdenResultado.push(parseInt(element))
         })
-        console.log('Orden Resultado:', matrizOrdenResultado)
+        console.log('matrizOrdenResultado:', matrizOrdenResultado)
     }
 
     //resultado (matriz o letra)
@@ -713,6 +713,6 @@ function resJSONaINT(){
         purosNumerosC.forEach( element => {
             arrMatrizC.push(parseInt(element))
         });
-        console.log('Resultado:',arrMatrizC)
+        console.log('arrMatrizC:',arrMatrizC)
     } 
 }
