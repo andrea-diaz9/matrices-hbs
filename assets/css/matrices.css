@@ -75,7 +75,7 @@
     background-color:white;
 }
 
- #btnVisualizar{
+ .btnVisualizar{
     width: 80%;
     border-radius: 20px;
     border-color:blueviolet;
@@ -92,7 +92,7 @@
 #btnInicio:hover{
 background-color: rgb(198, 157, 237);
 }
-#btnVisualizar:hover{
+.btnVisualizar:hover{
     background-color: white;
 }
 #btnMultiplicarAB{
@@ -121,12 +121,15 @@ background-color: rgb(198, 157, 237);
     background-color: rgb(88, 14, 137);
 }
 
-#celdaRes{
+.celdaRes{
     border: 1px black solid;
     background-color: rgb(200, 161, 226);
     font-size: small;
 }
-
-.resultadoMatriz{
+.celdaRes-resultadoMatriz{
+    border: 1px black solid;
+    background-color: rgb(200, 161, 226);
+    font-size: small;
     font-weight: bolder;
 }
+
