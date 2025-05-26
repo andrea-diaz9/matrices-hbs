@@ -653,16 +653,42 @@ function  resultadosBD(){
 }
 
 function resJSONaINT(){
+    const ordenAnum = document.getElementById('72-ordenA')
+    const purosNumerosA = document.getElementById('72-matrizA')
+    const ordenBnum = document.getElementById('72-ordenB')
+    const purosNumerosB = document.getElementById('72-matrizB')
+    const matrizOrdenResultado = getElementById('72-ordenR')
+    const purosNumerosC = document.getElementById('72-matrizR')
+
+    console.log(ordenAnum)
+    console.log(ordenAnum.value)
+
+    //orden A
+    ordenAnum= ordenAjson.split(' x ')
+    const arrOrdenAnums = []
+    ordenAnum.forEach(element => {
+        arrOrdenAnums.push(parseInt(element))
+    });
+    console.log('Orden A:', arrOrdenAnums)
+
     //matrizA
-    const purosNumerosA = matrizAjson.replace("[",'').replace("]",'').split(",")
+    purosNumerosA = matrizAjson.replace("[",'').replace("]",'').split(",")
     const arrMatrizA = []
     purosNumerosA.forEach( element => {
         arrMatrizA.push(parseInt(element))
     });
     console.log('MatrizA:',arrMatrizA)
+
+    //orden B
+    ordenBnum= ordenBjson.split(' x ')
+    const arrOrdenBnums = []
+    ordenBnum.forEach(element => {
+        arrOrdenBnums.push(parseInt(element))
+    });
+    console.log('Orden B:', arrOrdenBnums)
     
     //matrizB
-    const purosNumerosB = matrizBjson.replace("[",'').replace("]",'').split(",")
+    purosNumerosB = matrizBjson.replace("[",'').replace("]",'').split(",")
     const arrMatrizB = []
     purosNumerosB.forEach( element => {
         arrMatrizB.push(parseInt(element))
@@ -673,7 +699,7 @@ function resJSONaINT(){
     if(ordenRes=='N/A'){
         console.log(ordenRes)
     }else{
-        const matrizOrdenResultado = []
+        matrizOrdenResultado = []
         const purosNumerosR = ordenRes.replace(' x ', ' ').split(' ')
         purosNumerosR.forEach(element => {
             matrizOrdenResultado.push(parseInt(element))
@@ -685,11 +711,11 @@ function resJSONaINT(){
     if(resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma' || resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta' || resultadoJSON == 'La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'){
         console.log(resultadoJSON)
     }else{
-        const purosNumerozC = resultadoJSON.replace("[",'').replace("]",'').split(",")
+        purosNumerosC = resultadoJSON.replace("[",'').replace("]",'').split(",")
         const arrMatrizC = []
-        purosNumerozC.forEach( element => {
+        purosNumerosC.forEach( element => {
             arrMatrizC.push(parseInt(element))
         });
         console.log('Resultado:',arrMatrizC)
-    }
+    } 
 }
