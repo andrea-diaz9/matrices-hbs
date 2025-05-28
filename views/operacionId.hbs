@@ -8,13 +8,13 @@
         <link rel="stylesheet" href="/css/matrices.css">
 </head>
 <body>
-    {{!-- SEPARADOR --}}
+    {{!-- SEPARADOR --}} 
     <section class="row">
         <div class="col-12" style="height: 25px;"></div>
     </section>
     {{!-- SEPARADOR --}}
 
-    <section id="boton" class="row">
+    <section id="boton" class="row"> 
         <div class="col-5"></div>
         <div class="col-2">
             <a href="/historial"><button id="btnHistorial">Regresar al historial</button></a>
@@ -32,12 +32,25 @@
 {{!-- TITULOS --}}
 
 
-    <section id="matrizAB" class="row" style="height: 100px;">
+    <section id="matrizAB" class="row" style="height: 100%";>
         <div id="separador" class="col-1"></div>
         <div id="espacioPTablaA" class="col-4"></div>
-        <div id="espacioOperacion" class="col-2"></div>
+        <div id="espacioOperacion" class="col-2" style="height: 100%;"></div>
         <div id="espacioPTablaB" class="col-4"></div>
         <div id="separador" class="col-1"></div>
+    </section>
+
+{{!-- matriz C --}}
+    <section id="titulos" class="row" style="margin-top: 50px">
+        <div id="separador" class="col-4"></div>
+        <div id="titulo" class="col-4">Resultado</div>
+        <div id="separador" class="col-4"></div>
+    </section>
+
+    <section id="matrizResultado" class="row" {{!-- style="height: 290px;" --}}>
+        <div id="separador" class="col-4"></div>
+        <div id="espacioPTablaC" class="col-4"></div>
+        <div id="separador" class="col-4"></div>
     </section>
 </body>
 

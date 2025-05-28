@@ -12,6 +12,7 @@ function funciones(){
     crearTablaA()
     operacion()
     crearTablaB()
+    crearTablaResultado()
 }
 
 function crearTablaA(){
@@ -41,12 +42,25 @@ function crearTablaA(){
 
 function operacion(){
     const espacioOperacion = document.getElementById('espacioOperacion')
+    const div  = document.createElement('div')
+    div.setAttribute('class', 'col-12')
+    div.setAttribute('style', 'height: 33%')
+    espacioOperacion.append(div)
+
+    const div2  = document.createElement('div')
+    div2.setAttribute('class', 'col-12')
+    div2.setAttribute('style', 'height: 33%')
+    espacioOperacion.append(div2)
+    const operacion = document.createElement('p')
+
+    div2.append(operacion)
+
     if(arrOperacion == '+'){
-        espacioOperacion.innerHTML = '+'
+        operacion.innerHTML = '+'
     }else if (arrOperacion == 'x'){
-        espacioOperacion.innerHTML = 'x'
+        operacion.innerHTML = 'x'
     }else{
-        espacioOperacion.innerHTML = '-'
+        operacion.innerHTML = '-'
     }
 }
 
@@ -74,3 +88,39 @@ function crearTablaB(){
         }
     espacioPTablaB.appendChild(tabla)
 }
+
+function crearTablaResultado(){
+    const espacioPTablaResultado = document.getElementById('espacioPTablaC')
+    if(matrizOrdenResultado == 'N/A'){
+        const div = document.createElement('div')
+        const parrafo = document.createElement('p')
+        parrafo.setAttribute('style', 'text-align: center; border: solid purple 1px; background-color: rgb(200, 161, 226)')
+        parrafo.innerHTML= arrMatrizC[0]
+        div.append(parrafo)
+
+        espacioPTablaResultado.append(div)
+    }else{
+
+        const tabla = document.createElement('table')
+        tabla.setAttribute('style', 'padding: 0px; width: 100%; margin: 0x; height:100%')
+        let contador = 0
+    
+            for(let i= 1 ; i<=matrizOrdenResultado[0]; i++){
+                //se crea y se inserta una fila en la tabla de resultados
+                const row = document.createElement('tr')
+                row.setAttribute('style', `height: ${100/matrizOrdenResultado[0]}%`)
+                tabla.appendChild(row)
+                for(let j = 1; j <=matrizOrdenResultado[1]; j++ ){
+                    let td = document.createElement('td')
+                    row.appendChild(td)
+                    td.id=`pA${i}${j}`
+                    td.className=`celdaHistorial`
+                    td.setAttribute('style', `width: ${100/matrizOrdenResultado[1]}%; padding-top: 5px; padding-bottom: 5px`)
+                    td.innerHTML = arrMatrizC[contador]
+                    contador++
+                }
+            }
+        espacioPTablaResultado.appendChild(tabla)
+    }
+    }
+
