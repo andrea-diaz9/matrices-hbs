@@ -79,9 +79,12 @@
     width: 80%;
     border-radius: 20px;
     border-color:blueviolet;
-    background-color:rgb(200, 161, 226);
+    background-color: whitesmoke;
 }
-
+.btnVisualizar:hover{
+    background-color: blueviolet;
+    color:whitesmoke;
+}
 #btnSumar:hover,
 #btnGuardar:hover,
 #btnElegirOtroOrden:hover,
@@ -92,9 +95,7 @@
 #btnInicio:hover{
 background-color: rgb(198, 157, 237);
 }
-.btnVisualizar:hover{
-    background-color: white;
-}
+
 #btnMultiplicarAB{
     margin-right:10%;
     width: 80%;
@@ -151,6 +152,6 @@ background-color: rgb(198, 157, 237);
     border: solid, purple, 1px; 
     text-align: center;
     font-family: cursive;
-    font-size: large;
+    font-size: x-large;
     background-color: rgb(198, 157, 237);
 }
