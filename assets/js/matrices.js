@@ -653,13 +653,6 @@ function  resultadosBD(){
 }
 
 function resJSONaINT(){
-/*     const ordenAnum = document.getElementById('72-ordenA')
-    const purosNumerosA = document.getElementById('72-matrizA')
-    const ordenBnum = document.getElementById('72-ordenB')
-    const purosNumerosB = document.getElementById('72-matrizB')
-    const matrizOrdenResultado = getElementById('72-ordenR')
-    const purosNumerosC = document.getElementById('72-matrizR') */
-
     //orden A
     const ordenAnum= ordenAjson.split(' x ')
     const arrOrdenAnums = []

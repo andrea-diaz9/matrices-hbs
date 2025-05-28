@@ -133,3 +133,25 @@ background-color: rgb(198, 157, 237);
     font-weight: bolder;
 }
 
+#titulo{
+    text-align: center;
+    font-size: larger;
+    font-weight:bolder ;
+}
+
+#espacioOperacion{
+    text-align: center;
+    font-size: xxx-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 0.7% ;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.celdaHistorial{
+    border: solid, purple, 1px; 
+    text-align: center;
+    font-family: cursive;
+    font-size: large;
+    background-color: rgb(198, 157, 237);
+}

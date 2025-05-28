@@ -35,7 +35,7 @@ router.get('/historial', async(req,res) => {
             +"FORMAT(fechaOp, 'dd/MM/yyyy HH:mm') AS fechaOp FROM operaciones ORDER BY idOp DESC;")
 
         const datos = resultado.recordset
-        console.log(resultado.recordset)
+        console.log('datos mostrados ! ')
         res.render('historial', {
             title: 'Historial',
             datos: datos
@@ -46,20 +46,19 @@ router.get('/historial', async(req,res) => {
     }
 })
 
-router.get('/operacionId', async(req,res) => {
+router.get('/operacion', async(req,res) => {
     try{
         const pool = await conexion_db()
+        /* console.log(req.query) */
 
-        const resultado = await pool.request().query("SELECT idOp, ordenA, matrizA, ordenB, "
-            +"matrizB, tipoOp, ordenR, resultado,"
-            +"FORMAT(fechaOp, 'dd/MM/yyyy HH:mm') AS fechaOp FROM operaciones ORDER BY idOp DESC;")
+        const resultado = await pool.request().query(`SELECT idOp, ordenA, matrizA, ordenB, 
+            matrizB, tipoOp, ordenR, resultado FROM operaciones WHERE idOp=${req.query.id} ORDER BY idOp DESC;`)
+            const datos = resultado.recordset
+            console.log(datos[0])
 
-        const datos = resultado.recordset
-        const {idOp} = resultado.recordset
-        console.log({idOp})
-        res.render('operacionId', {
+            res.render('operacionId', {
             title: 'Historial',
-            datos: datos
+            datos: datos[0]
         })
     }catch(err){
         console.error('error en query', err)
