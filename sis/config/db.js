@@ -1,9 +1,20 @@
 const sql = require("mssql");
 
-const config = {
+/* const config = {
   user: "sa", 
   password: "prointernet", 
   server: "DESKTOP-HUMS825", 
+  database: "calculadoraMatrices", 
+  options: {
+    encrypt: false, 
+    trustServerCertificate: true, 
+  }
+}; */
+
+const config = {
+  user: "sa", 
+  password: "eskuneandy", 
+  server: "HIMAADC", 
   database: "calculadoraMatrices", 
   options: {
     encrypt: false, 
