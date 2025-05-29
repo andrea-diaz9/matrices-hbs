@@ -94,7 +94,7 @@ function crearTablaResultado(){
     if(matrizOrdenResultado == 'N/A'){
         const div = document.createElement('div')
         const parrafo = document.createElement('p')
-        parrafo.setAttribute('style', 'text-align: center; border: solid purple 1px; background-color: rgb(200, 161, 226); font-weight: bold')
+        parrafo.id='parrafoHistorial'
         parrafo.innerHTML= arrMatrizC[0]
         div.append(parrafo)
 

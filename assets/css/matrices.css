@@ -182,3 +182,10 @@ background-color: rgb(198, 157, 237);
     height:100%;
     border: 3px solid rgb(56, 28, 133);
 }
+
+#parrafoHistorial{
+    text-align: center;
+    border: 3px solid rgb(56, 28, 133);
+    background-color: white;
+    font-weight: bold
+}
