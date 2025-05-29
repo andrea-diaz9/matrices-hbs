@@ -79,7 +79,7 @@ function crearTablaB(){
             for(let j = 1; j <=arrOrdenBnums[1]; j++ ){
                 let td = document.createElement('td')
                 row.appendChild(td)
-                td.id=`pA${i}${j}`
+                td.id=`pB${i}${j}`
                 td.className=`celdaHistorial`
                 td.setAttribute('style', `width: ${100/arrOrdenBnums[1]}%;`)
                 td.innerHTML = arrMatrizB[contador]
@@ -94,7 +94,7 @@ function crearTablaResultado(){
     if(matrizOrdenResultado == 'N/A'){
         const div = document.createElement('div')
         const parrafo = document.createElement('p')
-        parrafo.setAttribute('style', 'text-align: center; border: solid purple 1px; background-color: rgb(200, 161, 226)')
+        parrafo.setAttribute('style', 'text-align: center; border: solid purple 1px; background-color: rgb(200, 161, 226); font-weight: bold')
         parrafo.innerHTML= arrMatrizC[0]
         div.append(parrafo)
 
@@ -113,9 +113,9 @@ function crearTablaResultado(){
                 for(let j = 1; j <=matrizOrdenResultado[1]; j++ ){
                     let td = document.createElement('td')
                     row.appendChild(td)
-                    td.id=`pA${i}${j}`
+                    td.id=`pR${i}${j}`
                     td.className=`celdaHistorial`
-                    td.setAttribute('style', `width: ${100/matrizOrdenResultado[1]}%; padding-top: 5px; padding-bottom: 5px`)
+                    td.setAttribute('style', `width: ${100/matrizOrdenResultado[1]}%; padding-top: 5px; padding-bottom: 5px; font-weight: bold`)
                     td.innerHTML = arrMatrizC[contador]
                     contador++
                 }

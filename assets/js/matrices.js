@@ -114,7 +114,7 @@ function inputsMatriz1(valorFila, valorColumna){
             inputCelda.setAttribute('type', 'text');
             inputCelda.setAttribute('class', 'celda');
             inputCelda.setAttribute('id', `m1c${contadorFil}${contadorCol}`);
-            inputCelda.setAttribute('oninput', 'limitChar(event, 1, 3)');
+            inputCelda.setAttribute('oninput', 'limitChar(event, 5, 5)');
             //se inserta en el contenedor la celda
             contenedor.appendChild(inputCelda)
         }
@@ -138,7 +138,7 @@ function inputsMatriz2(valorFila, valorColumna){
             inputCelda.setAttribute('type', 'text');
             inputCelda.setAttribute('class', 'celda');
             inputCelda.setAttribute('id', `m2c${contadorFil}${contadorCol}`);
-            inputCelda.setAttribute('oninput', 'limitChar(event, 1, 3)');
+            inputCelda.setAttribute('oninput', 'limitChar(event, 5, 5)');
             //se inserta en el contenedor la celda
             contenedor.appendChild(inputCelda)
         }
@@ -360,9 +360,9 @@ function crearTablaResultado(operacion){
 
     if(!tablaExistente){
         const divEspacio1 = document.createElement('div')
-        divEspacio1.className= 'col-3'
+        divEspacio1.className= 'col-4'
         const divEspacio2 = document.createElement('div')
-        divEspacio2.className= 'col-3'
+        divEspacio2.className= 'col-4'
 
         const lineaDiv = document.createElement('div')
         lineaDiv.className = 'col-12'
@@ -370,11 +370,12 @@ function crearTablaResultado(operacion){
         lineaDiv.className='parrafo'
         lineaDiv.style.height= '27px'
         lineaDiv.style.paddingTop='5px'
+        lineaDiv.style.marginTop = '10px'
         
     
         const table = document.createElement('table')
         table.id='disTabla'
-        table.className= 'col-6'
+        table.className= 'col-4'
         
         //aqui se pide el parametro para saber que operacion se esta ejecutando
         if (lineaDivExistente) {

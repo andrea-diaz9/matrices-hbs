@@ -1,6 +1,6 @@
 const sql = require("mssql");
 
-/* const config = {
+const config = {
   user: "sa", 
   password: "prointernet", 
   server: "DESKTOP-HUMS825", 
@@ -9,9 +9,9 @@ const sql = require("mssql");
     encrypt: false, 
     trustServerCertificate: true, 
   }
-};  */
+};
 
-const config = {
+/* const config = {
   user: "sa", 
   password: "eskuneandy", 
   server: "HIMAADC", 
@@ -20,7 +20,7 @@ const config = {
     encrypt: false, 
     trustServerCertificate: true, 
   }
-};
+}; */
 
 async function conexion_db() {
   try {

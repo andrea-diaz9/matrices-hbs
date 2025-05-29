@@ -4,19 +4,25 @@
     height: auto;
     float: left;
     text-align: center;
+    font-size: large;
 }
-
+#numFilas1, #numColumnas1, #numFilas2, #numColumnas2{
+    font-size: large;
+    text-align: center;
+}
 #Matriz2{
     padding: 0px;
     width: 50%;
     height: auto;
     float: right;
     text-align: center;
+    font-size: large;
 }
 .celda{
     width: 50px;
     height: 30px;
-    font-size: xx-small;
+    font-size: large;
+    text-align: center;
 }
 #imprimir-orden1{
     width: 50%;
@@ -32,18 +38,24 @@
 }
 #disTabla{
     padding: 0px;
-    border-left: 3px solid rgb(193, 210, 255);
-    border-right: 3px solid rgb(193, 210, 255);
+    border-left: 3px solid rgb(56, 28, 133);
+    border-top: 3px solid rgb(56, 28, 133);
+    border-bottom: 3px solid rgb(56, 28, 133);
+    border-right: 3px solid rgb(56, 28, 133);
 }
 
 .td{
     height: 30px;
     font-family: cursive;
-    border: 1px solid rgb(193, 210, 255);
+    border: 3px solid rgb(56, 28, 133);
     text-align: center;
+    background-color: aliceblue;
 }
 .parrafo{
-    font-family: cursive;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
 }
 
 #pMatriz1{
@@ -153,7 +165,7 @@ background-color: rgb(198, 157, 237);
 #espacioOperacion{
     text-align: center;
     font-size: 60px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: monospace;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -161,7 +173,6 @@ background-color: rgb(198, 157, 237);
 .celdaHistorial{
     border: solid, purple, 1px; 
     text-align: center;
-    font-family: cursive;
-    font-size: x-large;
+    font-family: monospace;
     background-color: rgb(198, 157, 237);
 }
