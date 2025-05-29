@@ -94,7 +94,7 @@
 }
 
  .btnVisualizar{
-    width: 80%;
+    width: 65%;
     border-radius: 20px;
     border-color:blueviolet;
     background-color: whitesmoke;
@@ -112,7 +112,8 @@
 #btnHistorial:hover,
 #btnHistorialenInicio:hover,
 #btnInicio:hover{
-background-color: rgb(198, 157, 237);
+background-color: blueviolet;
+color: white;
 }
 
 #btnMultiplicarAB{
