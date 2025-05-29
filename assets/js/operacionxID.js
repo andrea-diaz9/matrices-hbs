@@ -19,7 +19,7 @@ function crearTablaA(){
     const espacioPTablaA = document.getElementById('espacioPTablaA')
 
     const tabla = document.createElement('table')
-    tabla.setAttribute('style', 'padding: 0px; width: 100%; margin: 0x; height:100%')
+    tabla.id= 'tablaEnHistorial'
     let contador = 0
 
         for(let i= 1 ; i<=arrOrdenAnums[0]; i++){
@@ -32,7 +32,7 @@ function crearTablaA(){
                 row.appendChild(td)
                 td.className=`celdaHistorial`
                 td.id=`pA${i}${j}`
-                td.setAttribute('style', `width: ${100/arrOrdenAnums[1]}%; border: solid, purple, 1px; text-align: center; background-color: rgb(198, 157, 237);`)
+                td.setAttribute('style', `width: ${100/arrOrdenAnums[1]}%;`)
                 td.innerHTML = arrMatrizA[contador]
                 contador++
             }
@@ -68,7 +68,7 @@ function crearTablaB(){
     const espacioPTablaB = document.getElementById('espacioPTablaB')
 
     const tabla = document.createElement('table')
-    tabla.setAttribute('style', 'padding: 0px; width: 100%; margin: 0x; height:100%')
+    tabla.id= 'tablaEnHistorial'
     let contador = 0
 
         for(let i= 1 ; i<=arrOrdenBnums[0]; i++){
@@ -102,7 +102,7 @@ function crearTablaResultado(){
     }else{
 
         const tabla = document.createElement('table')
-        tabla.setAttribute('style', 'padding: 0px; width: 100%; margin: 0x; height:100%')
+         tabla.id= 'tablaEnHistorial'
         let contador = 0
     
             for(let i= 1 ; i<=matrizOrdenResultado[0]; i++){

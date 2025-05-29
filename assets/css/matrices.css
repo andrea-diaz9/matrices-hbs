@@ -38,16 +38,13 @@
 }
 #disTabla{
     padding: 0px;
-    border-left: 3px solid rgb(56, 28, 133);
-    border-top: 3px solid rgb(56, 28, 133);
-    border-bottom: 3px solid rgb(56, 28, 133);
-    border-right: 3px solid rgb(56, 28, 133);
+    border: 3px solid rgb(56, 28, 133);
 }
 
 .td{
     height: 30px;
     font-family: cursive;
-    border: 3px solid rgb(56, 28, 133);
+    border: 1px solid rgb(56, 28, 133);
     text-align: center;
     background-color: aliceblue;
 }
@@ -171,8 +168,17 @@ background-color: rgb(198, 157, 237);
 }
 
 .celdaHistorial{
-    border: solid, purple, 1px; 
+    height: 30px;
+    font-family: cursive;
+    border: 1px solid rgb(56, 28, 133);
     text-align: center;
-    font-family: monospace;
-    background-color: rgb(198, 157, 237);
+    background-color: aliceblue;
+}
+
+#tablaEnHistorial{
+    padding: 0px;
+    width: 100%;
+    margin: 0px;
+    height:100%;
+    border: 3px solid rgb(56, 28, 133);
 }
