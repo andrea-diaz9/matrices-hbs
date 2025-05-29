@@ -149,7 +149,7 @@ function inputsMatriz2(valorFila, valorColumna){
 }
 
 function guardarMatriz (){
-    //declaramos en donde se almacenaran los datos que inicen en 0
+    //declaramos en donde se almacenaran los datos que inicen vacias
     matrizA = []
     matrizB = []
 
@@ -540,7 +540,7 @@ function crearTablaResultadoMultiplicacion(operacion) {
         }
 
         // Actualizar el texto de la operación si ya existe
-        if (lineaDivExistente) {
+        if (lineaDivExistente) { 
             lineaDivExistente.innerHTML = operacion;
         }
         
@@ -597,12 +597,10 @@ function crearTablaResultadoMultiplicacion(operacion) {
 function resultadoInvalido(resultado) {
     const secTabla = document.getElementById('secTabla');
     
-    // Buscar si ya existe un elemento con la clase 'parrafo'
     let lineaDiv = secTabla.querySelector('.parrafo');
     
-    // Si ya existe, reemplazar el texto
     if (lineaDiv) {
-        lineaDiv.textContent = resultado;
+        lineaDiv.innerHTML = resultado;
     } else {
         // Crear el div si no existe
         lineaDiv = document.createElement('div');
@@ -610,7 +608,7 @@ function resultadoInvalido(resultado) {
         lineaDiv.style.textAlign = 'center';
         lineaDiv.style.height = '30px';
         lineaDiv.style.paddingTop = '10px';
-        lineaDiv.textContent = resultado;
+        lineaDiv.innerHTML = resultado;
         secTabla.appendChild(lineaDiv);
     }
 }
@@ -626,7 +624,6 @@ function consolaResultados(){
         resultadoJSON
     }
     console.log(operacionJSON,':',datosConsola)
-    resJSONaINT()
 }
 
 function  resultadosBD(){
@@ -652,62 +649,4 @@ function  resultadosBD(){
         console.log('Se guardó en BD')
     })
     .catch(err => console.log('error al imprimir', err))
-}
-
-function resJSONaINT(){
-    //orden A
-    const ordenAnum= ordenAjson.split(' x ')
-    const arrOrdenAnums = []
-    ordenAnum.forEach(element => {
-        arrOrdenAnums.push(parseInt(element))
-    });
-    console.log('arrOrdenAnums:', arrOrdenAnums)
-
-    //matrizA
-    const purosNumerosA = matrizAjson.replace("[",'').replace("]",'').split(",")
-    const arrMatrizA = []
-    purosNumerosA.forEach( element => {
-        arrMatrizA.push(parseInt(element))
-    });
-    console.log('arrMatrizA:',arrMatrizA)
-
-    //orden B
-    const ordenBnum= ordenBjson.split(' x ')
-    const arrOrdenBnums = []
-    ordenBnum.forEach(element => {
-        arrOrdenBnums.push(parseInt(element))
-    });
-    console.log('arrOrdenBnums:', arrOrdenBnums)
-    
-    //matrizB
-    const purosNumerosB = matrizBjson.replace("[",'').replace("]",'').split(",")
-    const arrMatrizB = []
-    purosNumerosB.forEach( element => {
-        arrMatrizB.push(parseInt(element))
-    });
-    console.log('arrMatrizB:',arrMatrizB)
-    
-    //ordenResultado
-    if(ordenRes=='N/A'){
-        console.log(ordenRes)
-    }else{
-        const matrizOrdenResultado = []
-        const purosNumerosR = ordenRes.replace(' x ', ' ').split(' ')
-        purosNumerosR.forEach(element => {
-            matrizOrdenResultado.push(parseInt(element))
-        })
-        console.log('matrizOrdenResultado:', matrizOrdenResultado)
-    }
-
-    //resultado (matriz o letra)
-    if(resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la suma' || resultadoJSON == 'El orden de las matrices no son del mismo tamaño por lo tanto no se puede realizar la resta' || resultadoJSON == 'La cantidad de filas de la matriz A no es igual a la filas de columnas de la matriz B'){
-        console.log(resultadoJSON)
-    }else{
-        const purosNumerosC = resultadoJSON.replace("[",'').replace("]",'').split(",")
-        const arrMatrizC = []
-        purosNumerosC.forEach( element => {
-            arrMatrizC.push(parseInt(element))
-        });
-        console.log('arrMatrizC:',arrMatrizC)
-    } 
 }

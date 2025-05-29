@@ -52,7 +52,7 @@ router.get('/operacion', async(req,res) => {
         /* console.log(req.query) */
 
         const resultado = await pool.request().query(`SELECT idOp, ordenA, matrizA, ordenB, 
-            matrizB, tipoOp, ordenR, resultado FROM operaciones WHERE idOp=${req.query.id} ORDER BY idOp DESC;`)
+            matrizB, tipoOp, ordenR, resultado FROM operaciones WHERE idOp=${req.query.id}`)
             const datos = resultado.recordset
             console.log(datos[0])
 
