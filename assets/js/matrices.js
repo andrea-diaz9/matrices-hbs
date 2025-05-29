@@ -45,11 +45,12 @@ function clickGuardar(){
     const btnElegirOtroOrden = document.getElementById('btnElegirOtroOrden')
     const sectionOrden = document.getElementById('delcararOrden')
     const btnHistorial = document.getElementById('btnHistorial')
-    
     const sctBotones = document.getElementById('sctBotones')
+    const btnhistenInicio = document.getElementById('btnhistenInicio')
     //se deja de mostrar cuando clickeamos guardar
     sectionOrden.style.display='none'
     btnGuardar.style.display='none'
+    btnhistenInicio.style.display='none'
 
     //aparecen para poder hacer las operaciones
     btnElegirOtroOrden.style.display='block'

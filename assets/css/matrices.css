@@ -75,6 +75,15 @@
     background-color:white;
 }
 
+#btnHistorialenInicio{
+    width: 100%;
+    border-radius: 20px;
+    border-color: blueviolet;
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
  .btnVisualizar{
     width: 80%;
     border-radius: 20px;
@@ -92,6 +101,7 @@
 #btnRestarBA:hover,
 #btnMultiplicarAB:hover,
 #btnHistorial:hover,
+#btnHistorialenInicio:hover,
 #btnInicio:hover{
 background-color: rgb(198, 157, 237);
 }
